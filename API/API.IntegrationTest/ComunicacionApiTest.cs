@@ -18,28 +18,28 @@ namespace SGMApi.IntegrationTest
         {
             // Act
             var content = new StringContent("", Encoding.UTF8,"application/x-www-form-urlencoded");
-            var response = await _client.PostAsync("api/Alumno/SendMessage?Fecha=20190919&FechaHora=20:30&UsuarioEmisorId=1&UsuarioReceptorId=1&Mensaje=Hola", content);
+            var response = await _client.PostAsync("api/Notificacion/SendMessage?Fecha=20190919&FechaHora=20:30&UsuarioEmisorId=1&UsuarioReceptorId=1&Mensaje=Hola", content);
 
             // Arrange
             response.EnsureSuccessStatusCode();
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             var result = await response.Content.ReadAsStringAsync();
-            var json = JsonConvert.DeserializeObject<Alumno>(result);
+            var json = JsonConvert.DeserializeObject<Notificacion>(result);
         }
 
         [Test]
         public async Task GetMessages()
         {
             // Act
-            var response = await _client.GetAsync("api/Alumno/GetMessages");
+            var response = await _client.GetAsync("api/Notificacion/GetMessages");
 
             // Arrange
             response.EnsureSuccessStatusCode();
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             var result = await response.Content.ReadAsStringAsync();
-            var json = JsonConvert.DeserializeObject<Alumno>(result);
+            var json = JsonConvert.DeserializeObject(result);
         }
     }
 }

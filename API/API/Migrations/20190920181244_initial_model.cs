@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace API.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial_model : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,10 +17,14 @@ namespace API.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Apellido = table.Column<string>(nullable: true),
                     Domicilio = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
                     FechaNacimiento = table.Column<string>(nullable: true),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
                     Mail = table.Column<string>(nullable: true),
                     Nombre = table.Column<string>(nullable: true),
-                    Telefono = table.Column<string>(nullable: true)
+                    NroDocumento = table.Column<string>(nullable: true),
+                    Telefono = table.Column<string>(nullable: true),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -34,7 +38,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Codigo = table.Column<string>(nullable: true),
-                    Descripcion = table.Column<string>(nullable: true)
+                    Descripcion = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -48,7 +55,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Codigo = table.Column<string>(nullable: true),
-                    Descripcion = table.Column<string>(nullable: true)
+                    Descripcion = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -75,7 +85,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Codigo = table.Column<string>(nullable: true),
-                    Descripcion = table.Column<string>(nullable: true)
+                    Descripcion = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -89,7 +102,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Codigo = table.Column<string>(nullable: true),
-                    Descripcion = table.Column<string>(nullable: true)
+                    Descripcion = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -103,7 +119,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Codigo = table.Column<string>(nullable: true),
-                    Descripcion = table.Column<string>(nullable: true)
+                    Descripcion = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -117,7 +136,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Codigo = table.Column<string>(nullable: true),
-                    Descripcion = table.Column<string>(nullable: true)
+                    Descripcion = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -132,10 +154,13 @@ namespace API.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Apellido = table.Column<string>(nullable: true),
                     Domicilio = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
                     FechaNacimiento = table.Column<string>(nullable: true),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
                     Mail = table.Column<string>(nullable: true),
                     Nombre = table.Column<string>(nullable: true),
-                    Telefono = table.Column<string>(nullable: true)
+                    Telefono = table.Column<string>(nullable: true),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -149,7 +174,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AlumnoId = table.Column<int>(nullable: false),
-                    CursoId = table.Column<int>(nullable: false)
+                    CursoId = table.Column<int>(nullable: false),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -175,7 +203,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AsignaturaId = table.Column<int>(nullable: false),
-                    CursoId = table.Column<int>(nullable: false)
+                    CursoId = table.Column<int>(nullable: false),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -200,8 +231,11 @@ namespace API.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
                     FuncionId = table.Column<int>(nullable: false),
-                    RolId = table.Column<int>(nullable: false)
+                    RolId = table.Column<int>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -228,11 +262,16 @@ namespace API.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Apellido = table.Column<string>(nullable: true),
                     Domicilio = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
                     FechaNacimiento = table.Column<string>(nullable: true),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    HorarioFin = table.Column<string>(nullable: true),
+                    HorarioInicio = table.Column<string>(nullable: true),
                     Mail = table.Column<string>(nullable: true),
                     Nombre = table.Column<string>(nullable: true),
                     Telefono = table.Column<string>(nullable: true),
-                    TipoProfesionalId = table.Column<int>(nullable: false)
+                    TipoProfesionalId = table.Column<int>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -252,10 +291,13 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Apellido = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
                     Nombre = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true),
                     TipoUsuarioId = table.Column<int>(nullable: false),
-                    UserName = table.Column<string>(nullable: true)
+                    UserName = table.Column<string>(nullable: true),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -269,13 +311,50 @@ namespace API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AutorizacionesRetiro",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    AlumnoId = table.Column<int>(nullable: false),
+                    Apellido = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    Nombre = table.Column<string>(nullable: true),
+                    NroDocumento = table.Column<string>(nullable: true),
+                    Parentesco = table.Column<string>(nullable: true),
+                    TipoDocumento = table.Column<string>(nullable: true),
+                    TutorId = table.Column<int>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AutorizacionesRetiro", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AutorizacionesRetiro_Alumnos_AlumnoId",
+                        column: x => x.AlumnoId,
+                        principalTable: "Alumnos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AutorizacionesRetiro_Tutores_TutorId",
+                        column: x => x.TutorId,
+                        principalTable: "Tutores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TutorAlumnos",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AlumnoId = table.Column<int>(nullable: false),
-                    TutorId = table.Column<int>(nullable: false)
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    TutorId = table.Column<int>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -295,32 +374,68 @@ namespace API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Notificaciones",
+                name: "Autorizaciones",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    AlumnoId = table.Column<int>(nullable: false),
+                    Autorizado = table.Column<bool>(nullable: false),
+                    Descripcion = table.Column<string>(nullable: true),
+                    Estado = table.Column<int>(nullable: false),
                     Fecha = table.Column<string>(nullable: true),
                     FechaHora = table.Column<string>(nullable: true),
-                    FechaHoraLeido = table.Column<string>(nullable: true),
-                    MarcaLeido = table.Column<bool>(nullable: false),
-                    Mensaje = table.Column<string>(nullable: true),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
                     ProfesionalId = table.Column<int>(nullable: false),
-                    TutorId = table.Column<int>(nullable: false)
+                    TutorId = table.Column<int>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Notificaciones", x => x.Id);
+                    table.PrimaryKey("PK_Autorizaciones", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Notificaciones_Profesionales_ProfesionalId",
+                        name: "FK_Autorizaciones_Alumnos_AlumnoId",
+                        column: x => x.AlumnoId,
+                        principalTable: "Alumnos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Autorizaciones_Profesionales_ProfesionalId",
                         column: x => x.ProfesionalId,
                         principalTable: "Profesionales",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Notificaciones_Tutores_TutorId",
+                        name: "FK_Autorizaciones_Tutores_TutorId",
                         column: x => x.TutorId,
                         principalTable: "Tutores",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ConfiguracionesHorarias",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DiaSemana = table.Column<int>(nullable: false),
+                    Estado = table.Column<int>(nullable: false),
+                    FechaDesde = table.Column<string>(nullable: true),
+                    FechaHasta = table.Column<string>(nullable: true),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    HoraDesde = table.Column<string>(nullable: true),
+                    HoraHasta = table.Column<string>(nullable: true),
+                    ProfesionalId = table.Column<int>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ConfiguracionesHorarias", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ConfiguracionesHorarias_Profesionales_ProfesionalId",
+                        column: x => x.ProfesionalId,
+                        principalTable: "Profesionales",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -332,7 +447,10 @@ namespace API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CursoId = table.Column<int>(nullable: false),
-                    ProfesionalId = table.Column<int>(nullable: false)
+                    Estado = table.Column<int>(nullable: false),
+                    FechaNovedad = table.Column<DateTime>(nullable: false),
+                    ProfesionalId = table.Column<int>(nullable: false),
+                    UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -351,6 +469,38 @@ namespace API.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            //migrationBuilder.CreateTable(
+            //    name: "Notificaciones",
+            //    columns: table => new
+            //    {
+            //        Id = table.Column<int>(nullable: false)
+            //            .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+            //        Estado = table.Column<int>(nullable: false),
+            //        FechaHoraLeido = table.Column<string>(nullable: true),
+            //        FechaNovedad = table.Column<DateTime>(nullable: false),
+            //        MarcaLeido = table.Column<bool>(nullable: false),
+            //        Mensaje = table.Column<string>(nullable: true),
+            //        UsuarioEmisorId = table.Column<int>(nullable: false),
+            //        UsuarioNovedad = table.Column<string>(maxLength: 256, nullable: true),
+            //        UsuarioReceptorId = table.Column<int>(nullable: false)
+            //    },
+            //    constraints: table =>
+            //    {
+            //        table.PrimaryKey("PK_Notificaciones", x => x.Id);
+            //        table.ForeignKey(
+            //            name: "FK_Notificaciones_Usuarios_UsuarioEmisorId",
+            //            column: x => x.UsuarioEmisorId,
+            //            principalTable: "Usuarios",
+            //            principalColumn: "Id",
+            //            onDelete: ReferentialAction.Cascade);
+            //        table.ForeignKey(
+            //            name: "FK_Notificaciones_Usuarios_UsuarioReceptorId",
+            //            column: x => x.UsuarioReceptorId,
+            //            principalTable: "Usuarios",
+            //            principalColumn: "Id",
+            //            onDelete: ReferentialAction.Cascade);
+            //    });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AlumnoCursos_AlumnoId",
                 table: "AlumnoCursos",
@@ -362,6 +512,36 @@ namespace API.Migrations
                 column: "CursoId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Autorizaciones_AlumnoId",
+                table: "Autorizaciones",
+                column: "AlumnoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Autorizaciones_ProfesionalId",
+                table: "Autorizaciones",
+                column: "ProfesionalId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Autorizaciones_TutorId",
+                table: "Autorizaciones",
+                column: "TutorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AutorizacionesRetiro_AlumnoId",
+                table: "AutorizacionesRetiro",
+                column: "AlumnoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AutorizacionesRetiro_TutorId",
+                table: "AutorizacionesRetiro",
+                column: "TutorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ConfiguracionesHorarias_ProfesionalId",
+                table: "ConfiguracionesHorarias",
+                column: "ProfesionalId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_CursoAsignaturas_AsignaturaId",
                 table: "CursoAsignaturas",
                 column: "AsignaturaId");
@@ -371,15 +551,15 @@ namespace API.Migrations
                 table: "CursoAsignaturas",
                 column: "CursoId");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Notificaciones_ProfesionalId",
-                table: "Notificaciones",
-                column: "ProfesionalId");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Notificaciones_UsuarioEmisorId",
+            //    table: "Notificaciones",
+            //    column: "UsuarioEmisorId");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Notificaciones_TutorId",
-                table: "Notificaciones",
-                column: "TutorId");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Notificaciones_UsuarioReceptorId",
+            //    table: "Notificaciones",
+            //    column: "UsuarioReceptorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProfesionalCursos_CursoId",
@@ -428,6 +608,15 @@ namespace API.Migrations
                 name: "AlumnoCursos");
 
             migrationBuilder.DropTable(
+                name: "Autorizaciones");
+
+            migrationBuilder.DropTable(
+                name: "AutorizacionesRetiro");
+
+            migrationBuilder.DropTable(
+                name: "ConfiguracionesHorarias");
+
+            migrationBuilder.DropTable(
                 name: "CursoAsignaturas");
 
             migrationBuilder.DropTable(
@@ -446,10 +635,10 @@ namespace API.Migrations
                 name: "TutorAlumnos");
 
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Asignaturas");
 
             migrationBuilder.DropTable(
-                name: "Asignaturas");
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Cursos");

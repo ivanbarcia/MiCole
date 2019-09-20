@@ -38,7 +38,6 @@ namespace API.Context
         public DbSet<Notificacion> Notificacion { get; set; }
         public DbSet<Autorizacion> Autorizacion { get; set; }
         public DbSet<AutorizacionRetiro> AutorizacionRetiro { get; set; }
-        public DbSet<Padres> Padres { get; set; }
         public DbSet<ConfiguracionHoraria> ConfiguracionHoraria { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

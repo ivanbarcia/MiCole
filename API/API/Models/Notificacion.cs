@@ -12,11 +12,5 @@ namespace API.Models
         public string Mensaje { get; set; }
         public bool MarcaLeido { get; set; }
         public string FechaHoraLeido { get; set; }
-
-        [ForeignKey("UsuarioEmisorId")]
-        public virtual Usuario UsuarioEmisor { get; set; }
-
-        [ForeignKey("UsuarioReceptorId")]
-        public virtual Usuario UsuarioReceptor { get; set; }
     }
 }

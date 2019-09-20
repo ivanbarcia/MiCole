@@ -17,6 +17,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190920175443_configuracion_horaria.cs" />
+    <Compile Remove="Migrations\20190920175443_configuracion_horaria.Designer.cs" />
+    <Compile Remove="Migrations\20190920175828_configuracion_horaria.cs" />
+    <Compile Remove="Migrations\20190920175828_configuracion_horaria.Designer.cs" />
+    <Compile Remove="Migrations\20190920180314_initial_model.cs" />
+    <Compile Remove="Migrations\20190920180314_initial_model.Designer.cs" />
+    <Compile Remove="Migrations\20190920181502_notificaciones.cs" />
+    <Compile Remove="Migrations\20190920181502_notificaciones.Designer.cs" />
+    <Compile Remove="Migrations\20190920181539_notificaciones.cs" />
+    <Compile Remove="Migrations\20190920181539_notificaciones.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="nlog.config" />
   </ItemGroup>
 
@@ -50,6 +63,10 @@
     <Content Update="nlog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Parameters\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>

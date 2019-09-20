@@ -15,12 +15,12 @@ namespace API.Controllers
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiExplorerSettings(GroupName = "v1")]
-    public class ComunicacionController : Controller
+    public class NotificacionController : Controller
     {
         private readonly DataContext _context;
         private readonly IConfiguration _configuration;
 
-        public ComunicacionController(DataContext context, IConfiguration configuration)
+        public NotificacionController(DataContext context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;
@@ -71,7 +71,7 @@ namespace API.Controllers
         [HttpGet]
         [Route("GetMessages")]
         [ETagFilter(200)]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<Notificacion>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         public async Task<IActionResult> GetMessages()
