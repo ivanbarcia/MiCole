@@ -22,19 +22,14 @@ namespace API.Context
 
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<TipoUsuario> TipoUsuario { get; set; }
-        public DbSet<Funcion> Funcion { get; set; }
-        public DbSet<Rol> Rol { get; set; }
-        public DbSet<RolFuncion> RolFuncion { get; set; }
         public DbSet<Asignatura> Asignatura { get; set; }
         public DbSet<Curso> Curso { get; set; }
         public DbSet<CursoAsignatura> CursoAsignatura { get; set; }
         public DbSet<Alumno> Alumno { get; set; }
         public DbSet<Tutor> Tutor { get; set; }
-        public DbSet<TutorAlumno> TutorAlumno { get; set; }
         public DbSet<TipoProfesional> TipoProfesional { get; set; }
         public DbSet<Profesional> Profesional { get; set; }
         public DbSet<ProfesionalCurso> ProfesionalCurso { get; set; }
-        public DbSet<AlumnoCurso> AlumnoCurso { get; set; }
         public DbSet<Notificacion> Notificacion { get; set; }
         public DbSet<Autorizacion> Autorizacion { get; set; }
         public DbSet<AutorizacionRetiro> AutorizacionRetiro { get; set; }

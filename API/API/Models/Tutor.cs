@@ -13,5 +13,7 @@ namespace API.Models
         public string Telefono { get; set; }
         public string Mail { get; set; }
         public string FechaNacimiento { get; set; }
+
+        public Alumno Alumno { get; set; }
     }
 }

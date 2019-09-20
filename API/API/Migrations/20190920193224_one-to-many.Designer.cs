@@ -11,9 +11,10 @@ using System;
 namespace API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190920193224_one-to-many")]
+    partial class onetomany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,6 +27,12 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Apellido");
+
+                    b.Property<int?>("AutorizacionId");
+
+                    b.Property<int?>("AutorizacionRetiroId");
+
+                    b.Property<int?>("CursoId");
 
                     b.Property<string>("Domicilio");
 
@@ -43,10 +50,20 @@ namespace API.Migrations
 
                     b.Property<string>("Telefono");
 
+                    b.Property<int?>("TutorId");
+
                     b.Property<string>("UsuarioNovedad")
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AutorizacionId");
+
+                    b.HasIndex("AutorizacionRetiroId");
+
+                    b.HasIndex("CursoId");
+
+                    b.HasIndex("TutorId");
 
                     b.ToTable("Alumnos");
                 });
@@ -77,8 +94,6 @@ namespace API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AlumnoId");
-
                     b.Property<bool>("Autorizado");
 
                     b.Property<string>("Descripcion");
@@ -91,16 +106,14 @@ namespace API.Migrations
 
                     b.Property<DateTime>("FechaNovedad");
 
-                    b.Property<int?>("ProfesionalId");
+                    b.Property<int>("ProfesionalId");
 
-                    b.Property<int?>("TutorId");
+                    b.Property<int>("TutorId");
 
                     b.Property<string>("UsuarioNovedad")
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AlumnoId");
 
                     b.HasIndex("ProfesionalId");
 
@@ -113,8 +126,6 @@ namespace API.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("AlumnoId");
 
                     b.Property<string>("Apellido");
 
@@ -130,14 +141,12 @@ namespace API.Migrations
 
                     b.Property<string>("TipoDocumento");
 
-                    b.Property<int?>("TutorId");
+                    b.Property<int>("TutorId");
 
                     b.Property<string>("UsuarioNovedad")
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AlumnoId");
 
                     b.HasIndex("TutorId");
 
@@ -180,8 +189,6 @@ namespace API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AlumnoId");
-
                     b.Property<string>("Codigo");
 
                     b.Property<string>("Descripcion");
@@ -194,8 +201,6 @@ namespace API.Migrations
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AlumnoId");
 
                     b.ToTable("Cursos");
                 });
@@ -373,8 +378,6 @@ namespace API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("AlumnoId");
-
                     b.Property<string>("Apellido");
 
                     b.Property<string>("Domicilio");
@@ -395,8 +398,6 @@ namespace API.Migrations
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AlumnoId");
 
                     b.ToTable("Tutores");
                 });
@@ -430,30 +431,44 @@ namespace API.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("API.Models.Autorizacion", b =>
+            modelBuilder.Entity("API.Models.Alumno", b =>
                 {
-                    b.HasOne("API.Models.Alumno", "Alumno")
+                    b.HasOne("API.Models.Autorizacion", "Autorizacion")
                         .WithMany()
-                        .HasForeignKey("AlumnoId");
+                        .HasForeignKey("AutorizacionId");
 
-                    b.HasOne("API.Models.Profesional", "Profesional")
+                    b.HasOne("API.Models.AutorizacionRetiro", "AutorizacionRetiro")
                         .WithMany()
-                        .HasForeignKey("ProfesionalId");
+                        .HasForeignKey("AutorizacionRetiroId");
+
+                    b.HasOne("API.Models.Curso", "Curso")
+                        .WithMany()
+                        .HasForeignKey("CursoId");
 
                     b.HasOne("API.Models.Tutor", "Tutor")
                         .WithMany()
                         .HasForeignKey("TutorId");
                 });
 
-            modelBuilder.Entity("API.Models.AutorizacionRetiro", b =>
+            modelBuilder.Entity("API.Models.Autorizacion", b =>
                 {
-                    b.HasOne("API.Models.Alumno", "Alumno")
+                    b.HasOne("API.Models.Profesional", "Profesional")
                         .WithMany()
-                        .HasForeignKey("AlumnoId");
+                        .HasForeignKey("ProfesionalId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("API.Models.Tutor", "Tutor")
                         .WithMany()
-                        .HasForeignKey("TutorId");
+                        .HasForeignKey("TutorId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("API.Models.AutorizacionRetiro", b =>
+                {
+                    b.HasOne("API.Models.Tutor", "Tutor")
+                        .WithMany()
+                        .HasForeignKey("TutorId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("API.Models.ConfiguracionHoraria", b =>
@@ -462,13 +477,6 @@ namespace API.Migrations
                         .WithMany()
                         .HasForeignKey("ProfesionalId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("API.Models.Curso", b =>
-                {
-                    b.HasOne("API.Models.Alumno", "Alumno")
-                        .WithMany()
-                        .HasForeignKey("AlumnoId");
                 });
 
             modelBuilder.Entity("API.Models.CursoAsignatura", b =>
@@ -503,13 +511,6 @@ namespace API.Migrations
                         .WithMany()
                         .HasForeignKey("ProfesionalId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("API.Models.Tutor", b =>
-                {
-                    b.HasOne("API.Models.Alumno", "Alumno")
-                        .WithMany()
-                        .HasForeignKey("AlumnoId");
                 });
 
             modelBuilder.Entity("API.Models.Usuario", b =>
