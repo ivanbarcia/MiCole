@@ -7,6 +7,7 @@ namespace API.Models
     [Table("Profesionales")]
     public class Profesional : AuditableEntity
     {
+        public int UsuarioId { get; set; }
         public int TipoProfesionalId { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -18,5 +19,6 @@ namespace API.Models
         public string HorarioFin { get; set; }
 
         public virtual TipoProfesional TipoProfesional { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace API.Models
     [Table("Alumnos")]
     public class Alumno : AuditableEntity
     {
+        public int UsuarioId { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string NroDocumento { get; set; }
@@ -14,5 +15,7 @@ namespace API.Models
         public string Telefono { get; set; }
         public string Mail { get; set; }
         public string FechaNacimiento { get; set; }
+
+        public virtual Usuario Usuario { get; set; }
     }
 }

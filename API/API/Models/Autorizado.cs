@@ -4,17 +4,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Models
 {
-    [Table("Autorizados")]
-    public class Autorizado : AuditableEntity
+    [Table("Autorizaciones")]
+    public class Autorizacion : AuditableEntity
     {
+        public string Fecha { get; set; }
+        public string FechaHora { get; set; }
+        public int ProfesionalId { get; set; }
         public int AlumnoId { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string Domicilio { get; set; }
-        public string Telefono { get; set; }
-        public string Mail { get; set; }
-        public string FechaNacimiento { get; set; }
+        public string Descripcion { get; set; }
+        public bool Autorizado { get; set; }
+        public int TutorId { get; set; }
 
+        public virtual Profesional Profesional { get; set; }
         public virtual Alumno Alumno { get; set; }
+        public virtual Tutor Tutor { get; set; }
     }
 }
