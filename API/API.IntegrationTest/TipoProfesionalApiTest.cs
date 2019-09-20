@@ -11,58 +11,58 @@ using System.Threading.Tasks;
 namespace SGMApi.IntegrationTest
 {
     [TestFixture]
-    public class AlumnoApiTest : TestFixture
+    public class TipoProfesionalApiTest : TestFixture
     {
         [Test]
-        public async Task AddAlumno()
+        public async Task AddTipoProfesional()
         {
             // Act
             var content = new StringContent("", Encoding.UTF8,"application/x-www-form-urlencoded");
-            var response = await _client.PostAsync("api/Alumno/Add?Nombre=Ivan&Apellido=Barcia", content);
+            var response = await _client.PostAsync("api/TipoProfesional/Add?Nombre=Ivan&Apellido=Barcia", content);
 
             // Arrange
             response.EnsureSuccessStatusCode();
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             var result = await response.Content.ReadAsStringAsync();
-            var json = JsonConvert.DeserializeObject<Alumno>(result);
+            var json = JsonConvert.DeserializeObject<TipoProfesional>(result);
         }
 
         [Test]
-        public async Task UpdateAlumno()
+        public async Task UpdateTipoProfesional()
         {
             // Act
             var content = new StringContent("", Encoding.UTF8, "application/x-www-form-urlencoded");
-            var response = await _client.PutAsync("api/Alumno/Update?Nombre=Ivan&Apellido=Barcia", content);
+            var response = await _client.PutAsync("api/TipoProfesional/Update?Nombre=Ivan&Apellido=Barcia", content);
 
             // Arrange
             response.EnsureSuccessStatusCode();
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             var result = await response.Content.ReadAsStringAsync();
-            var json = JsonConvert.DeserializeObject<Alumno>(result);
+            var json = JsonConvert.DeserializeObject<TipoProfesional>(result);
         }
 
         [Test]
-        public async Task DeleteAlumno()
+        public async Task DeleteTipoProfesional()
         {
             // Act
             var content = new StringContent("", Encoding.UTF8, "application/x-www-form-urlencoded");
-            var response = await _client.PostAsync("api/Alumno/Delete?Id=2", content);
+            var response = await _client.PostAsync("api/TipoProfesional/Delete?Id=2", content);
 
             // Arrange
             response.EnsureSuccessStatusCode();
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             var result = await response.Content.ReadAsStringAsync();
-            var json = JsonConvert.DeserializeObject<Alumno>(result);
+            var json = JsonConvert.DeserializeObject<TipoProfesional>(result);
         }
 
         [Test]
-        public async Task GetAlumnos()
+        public async Task GetTipoProfesionals()
         {
             // Act
-            var response = await _client.GetAsync("api/Alumno/Get?Nombre=Ivan&Apellido=Barcia");
+            var response = await _client.GetAsync("api/TipoProfesional/Get?Nombre=Ivan&Apellido=Barcia");
 
             // Arrange
             response.EnsureSuccessStatusCode();
@@ -73,17 +73,17 @@ namespace SGMApi.IntegrationTest
         }
 
         [Test]
-        public async Task FindAlumno()
+        public async Task FindTipoProfesional()
         {
             // Act
-            var response = await _client.GetAsync("api/Alumno/Find?Id=3");
+            var response = await _client.GetAsync("api/TipoProfesional/Find?Id=3");
 
             // Arrange
             response.EnsureSuccessStatusCode();
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
 
             var result = await response.Content.ReadAsStringAsync();
-            var json = JsonConvert.DeserializeObject<Alumno>(result);
+            var json = JsonConvert.DeserializeObject<TipoProfesional>(result);
         }
     }
 }

@@ -9,6 +9,7 @@ namespace API.Models
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public string NroDocumento { get; set; }
         public string Domicilio { get; set; }
         public string Telefono { get; set; }
         public string Mail { get; set; }

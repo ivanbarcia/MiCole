@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 namespace SGMApi.IntegrationTest
 {
     [TestFixture]
-    public class ComunicacionApiTest : TestFixture
+    public class NotificacionApiTest : TestFixture
     {
         [Test]
         public async Task SendMessage()
         {
             // Act
-            var content = new StringContent("", Encoding.UTF8,"application/x-www-form-urlencoded");
+            var content = new StringContent("", Encoding.UTF8, "application/x-www-form-urlencoded");
             var response = await _client.PostAsync("api/Notificacion/SendMessage?Fecha=20190919&FechaHora=20:30&UsuarioEmisorId=1&UsuarioReceptorId=1&Mensaje=Hola", content);
 
             // Arrange

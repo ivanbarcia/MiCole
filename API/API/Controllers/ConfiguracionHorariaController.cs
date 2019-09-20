@@ -15,83 +15,81 @@ namespace API.Controllers
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiExplorerSettings(GroupName = "v1")]
-    public class AlumnoController : Controller
+    public class ConfiguracionHorariaController : Controller
     {
         private readonly DataContext _context;
         private readonly IConfiguration _configuration;
 
-        public AlumnoController(DataContext context, IConfiguration configuration)
+        public ConfiguracionHorariaController(DataContext context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;
         }
 
         /// <summary>
-        /// Doy de alta un alumno
+        /// Doy de alta una ConfiguracionHoraria
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
         ///     POST /Add
         ///     {
-        ///        "Nombre": "Cosme",
-        ///        "Apellido": "Fulanito",
-        ///        "Documento": "32999999"
+        ///        "Codigo": "Cosme",
+        ///        "Descripcion": "Fulanito"
         ///     }
         /// </remarks>
         [HttpPost]
         [Route("Add")]
         [ETagFilter(200)]
-        [ProducesResponseType(typeof(IEnumerable<Alumno>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<ConfiguracionHoraria>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        public async Task<IActionResult> Add(Alumno datos)
+        public async Task<IActionResult> Add(ConfiguracionHoraria datos)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            _context.Alumno.Add(datos);
+            _context.ConfiguracionHoraria.Add(datos);
             _context.SaveChanges();
 
             return new ObjectResult(datos);
         }
 
         /// <summary>
-        /// Edita alumno
+        /// Edita ConfiguracionHoraria
         /// </summary>
         /// <remarks>
         /// Sample request:
         ///
         ///     PUT /Update
         ///     {
-        ///        "Nombre": "Cosme",
-        ///        "Apellido": "Fulanito",
-        ///        "Documento": "32999999"
+        ///        "Codigo": "Cosme",
+        ///        "Descripcion": "Fulanito"
         ///     }
         /// </remarks>
         [HttpPut]
         [Route("Update")]
         [ETagFilter(200)]
-        [ProducesResponseType(typeof(IEnumerable<Alumno>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<ConfiguracionHoraria>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        public async Task<IActionResult> Update(Alumno datos)
+        public async Task<IActionResult> Update(ConfiguracionHoraria datos)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest();
             }
 
-            _context.Alumno.Update(datos);
+            _context.ConfiguracionHoraria.Update(datos);
             _context.SaveChanges();
 
             return new ObjectResult(datos);
         }
 
         /// <summary>
-        /// Elimino un alumno
+        /// Elimino una ConfiguracionHoraria
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -104,7 +102,7 @@ namespace API.Controllers
         [HttpPost]
         [Route("Delete")]
         [ETagFilter(200)]
-        [ProducesResponseType(typeof(IEnumerable<Alumno>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<ConfiguracionHoraria>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         public async Task<IActionResult> Delete([FromQuery] int Id)
@@ -114,16 +112,16 @@ namespace API.Controllers
                 return BadRequest();
             }
 
-            var datos = _context.Alumno.Find(Id);
+            var datos = _context.ConfiguracionHoraria.Find(Id);
 
-            _context.Alumno.Remove(datos);
+            _context.ConfiguracionHoraria.Remove(datos);
             _context.SaveChanges();
 
             return new ObjectResult(datos);
         }
 
         /// <summary>
-        /// Obtengo alumnos
+        /// Obtengo ConfiguracionHorarias
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -136,7 +134,7 @@ namespace API.Controllers
         [HttpGet]
         [Route("Get")]
         [ETagFilter(200)]
-        [ProducesResponseType(typeof(IEnumerable<Alumno>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<ConfiguracionHoraria>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         public async Task<IActionResult> Get([FromQuery] string Filtro)
@@ -146,13 +144,13 @@ namespace API.Controllers
                 return BadRequest();
             }
 
-            var result = _context.Alumno.Where(x => x.Nombre.Contains(Filtro) || x.Apellido.Contains(Filtro) || x.NroDocumento.Contains(Filtro));
+            var result = _context.ConfiguracionHoraria.Where(x => x.Profesional.Nombre.Contains(Filtro) || x.Profesional.Apellido.Contains(Filtro));
 
             return new ObjectResult(result);
         }
 
         /// <summary>
-        /// Obtengo alumno
+        /// Obtengo ConfiguracionHoraria
         /// </summary>
         /// <remarks>
         /// Sample request:
@@ -165,7 +163,7 @@ namespace API.Controllers
         [HttpGet]
         [Route("Find")]
         [ETagFilter(200)]
-        [ProducesResponseType(typeof(IEnumerable<Alumno>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(IEnumerable<ConfiguracionHoraria>), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
         public async Task<IActionResult> Find([FromQuery] int Id)
@@ -175,7 +173,7 @@ namespace API.Controllers
                 return BadRequest();
             }
 
-            var result = _context.Alumno.Find(Id);
+            var result = _context.ConfiguracionHoraria.Find(Id);
 
             return new ObjectResult(result);
         }
