@@ -1,0 +1,187 @@
+﻿@using eDrago.Resources
+@using eDrago.Filters
+
+@{
+    var nombreUsuario = ((User as CustomPrincipal) == null ? "" : (User as CustomPrincipal).LastName);
+    var fecha = DateTime.Today.Day + "/" + DateTime.Today.Month + "/" + DateTime.Today.Year;
+}
+<div style="width: auto; padding: 23px 30px 14px 0;">
+    @if (Request.IsAuthenticated)
+    {
+        @*<div style="padding-top: 10px;">
+                <div class="notification"></div>
+                <div class="noti-content">
+                    <div class="noti-top-arrow"></div>
+                    <ul id="notiContent"></ul>
+                </div>
+            </div>*@
+
+        <div style="padding-top: 6px;">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <span class="clear">
+                    <span class="text-white text-xs block"><span class="glyphicon glyphicon-user" style="font-size:16px"></span>&nbsp;&nbsp;&nbsp;<strong>@nombreUsuario</strong><b class="caret"></b></span>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Fecha: @fecha
+                </span>
+            </a>
+            <ul class="dropdown-menu animated fadeInRight m-t-xs desplegable-usuario">
+                <li><a href="@Url.Action("ModificarDatos", "Usuario")">Mi Perfil</a></li>
+                @*<li><a href="@Url.Action("ModificarDatos", "Usuario")">Modificar Datos</a></li>*@
+                @*<li><a href="@Url.Action("Index", "Notification")">Notificaciones</a></li>*@
+                @*<li><a href="@Url.Action("Index", "Notification")">Inactivar Cuenta</a></li>*@
+                @*<li><a href="@Url.Action("Index", "Notification")">Favoritos</a></li>*@
+                @*<li><a href="@Url.Action("Index", "Notification")">Sugerencias</a></li>*@
+                @*<li><a href="@Url.Action("Index", "Notification")">Preguntas Frecuentes</a></li>*@
+                @*<li><a href="@Url.Action("Index", "Notification")">Aviso Legal</a></li>*@
+                <li class="divider"></li>
+                <li>@Html.ActionLink(@Global.LogOut, "Logout", "Login")</li>
+            </ul>
+        </div>
+    }
+</div>
+
+@* Add Jquery Library *@
+@*<script src="@Url.Content("~/Scripts/jquery.signalR-2.3.0.min.js")"></script>
+    <script src="@Url.Content("~/signalr/hubs")"></script>*@
+
+<style type="text/css">
+    .desplegable-usuario {
+        left: auto !important;
+        right: 20px !important;
+    }
+
+    .dropdown-menu > li > a {
+        color: #000000 !important;
+    }
+    
+    .noti-content {
+        position: fixed;
+        right: 121px;
+        background: #fff;
+        border-radius: 5px;
+        top: 47px;
+        width: 250px;
+        display: none;
+        border: 1px solid #9E988B;
+    }
+
+    ul#notiContent {
+        max-height: 200px;
+        overflow: auto;
+        padding: 0px;
+        margin: 0px;
+        /*padding-left: 20px;*/
+    }
+
+        ul#notiContent li {
+            margin: 3px;
+            padding: 6px;
+            background: #fff;
+        }
+
+    .noti-top-arrow {
+        border-color: transparent;
+        border-bottom-color: #F5DEB3;
+        border-style: dashed dashed solid;
+        border-width: 0 8.5px 8.5px;
+        position: absolute;
+        right: 32px;
+        top: -8px;
+    }
+
+    span.noti {
+        color: #FF2323;
+        margin: 15px;
+        position: fixed;
+        right: 100px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    span.count {
+        position: relative;
+        top: -3px;
+    }
+</style>
+
+@* Add jquery code for Get Notification & setup signalr *@
+
+@*<script type="text/javascript">
+            $(function () {
+                // Click on notification icon for show notification
+                $('.notification').click(function (e) {
+                    e.stopPropagation();
+                    $('.noti-content').show();
+                    var count = 0;
+                    count = parseInt($('data-count').html()) || 0;
+                    //only load notification if not already loaded
+                    //if (count > 0) {
+                        updateNotification();
+                    //}
+                    $('data-count', this).html('&nbsp;');
+                })
+
+                // hide notifications
+                $('html').click(function () {
+                    $('.noti-content').hide();
+                })
+
+                // update notification
+                function updateNotification() {
+                    $('#notiContent').empty();
+                    $('#notiContent').append($('<li><i class="fa fa-spinner fa-spin" style="float: left;"></i>Cargando...</li>'));
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("GetNotification", "Home")',
+                        success: function (response) {
+                            $('#notiContent').empty();
+                            if (response.length  == 0) {
+                                $('#notiContent').append($('<li>No hay avisos nuevos</li>'));
+                            }
+                            $.each(response, function (index, value) {
+                                if (value.Type != 1) {
+                                    $('#notiContent').append($('<li><span class="glyphicon glyphicon-plus" style="color: limegreen; float: left;"></span>&nbsp;Novedad <a href="@Url.Action("Index", "WorkflowNovedad")"><span style="color:royalblue">' + value.Title.toString() + '</span></a> fue agregado por <strong>' + value.User + '</strong></li>'));
+                                } else {
+                                    $('#notiContent').append($('<li><span class="glyphicon glyphicon-pencil" style="color: orange; float: left;"></span>&nbsp;Novedad <a href="@Url.Action("Index", "WorkflowNovedad")"><span style="color:royalblue">' + value.Title.toString() + '</span></a> fue actualizado por <strong>' + value.User + '</strong></li>'));
+                                }
+                            });
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    })
+                }
+
+                // update notification count
+                function updateNotificationCount() {
+                    var el = document.querySelector('.notification');
+
+                    var count = Number(el.getAttribute('data-count')) || 0;
+                    el.setAttribute('data-count', count + 1);
+                    el.classList.remove('notify');
+                    el.offsetWidth = el.offsetWidth;
+                    el.classList.add('notify');
+                    if (count === 0) {
+                        el.classList.add('show-count');
+                    }
+                }
+
+                // signalr js code for start hub and send receive notification
+                var notificationHub = $.connection.notificationHub;
+
+                //$.connection.hub.logging = true;
+
+                //signalr method for push server message to client
+                notificationHub.client.notify = function (message) {
+                    console.log(message);
+                    if (message.toLowerCase() == "added") {
+                        updateNotificationCount();
+                    }
+                }
+
+                $.connection.hub.start().done(function () {
+                    console.log('Notification hub started');
+                }).fail(function (e) {
+                    console.log(e);
+                });
+            })
+    </script>*@

@@ -1,0 +1,1386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppTitle" xml:space="preserve">
+    <value>Basa Capital</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="Boleto" xml:space="preserve">
+    <value>Boleto</value>
+  </data>
+  <data name="CantidadConciliadas" xml:space="preserve">
+    <value>Cantidad Conciliadas</value>
+  </data>
+  <data name="CantidadConciliadasManual" xml:space="preserve">
+    <value>Cantidad Conciliadas Manual</value>
+  </data>
+  <data name="CantidadNoConciliadas" xml:space="preserve">
+    <value>Cantidad No Conciliadas</value>
+  </data>
+  <data name="CantidadPendientesSupervision" xml:space="preserve">
+    <value>Cantidad Pendientes Supervisión</value>
+  </data>
+  <data name="Capital" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="Clase" xml:space="preserve">
+    <value>Clase</value>
+  </data>
+  <data name="ClienteAlias" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="Codigo" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="ConceptoCuentaCustodia" xml:space="preserve">
+    <value>Concepto Cuenta Custodia</value>
+  </data>
+  <data name="Conciliacion" xml:space="preserve">
+    <value>Conciliación</value>
+  </data>
+  <data name="ConciliacionItem_Cuenta" xml:space="preserve">
+    <value>Cuenta</value>
+  </data>
+  <data name="ConciliacionItem_Especie" xml:space="preserve">
+    <value>Especie</value>
+  </data>
+  <data name="ConciliacionItem_Tipo" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="ConciliacionItem_Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Contrasena" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Contrasena_Requerido" xml:space="preserve">
+    <value>Contraseña requerida</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Nuevo</value>
+  </data>
+  <data name="Cuit" xml:space="preserve">
+    <value>CI/RUC</value>
+  </data>
+  <data name="Cupon" xml:space="preserve">
+    <value>Cupón</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="DashboardCantidadConciliadas" xml:space="preserve">
+    <value>Conciliadas</value>
+  </data>
+  <data name="DashboardCantidadConciliadasManual" xml:space="preserve">
+    <value>Manuales</value>
+  </data>
+  <data name="DashboardCantidadNoConciliadas" xml:space="preserve">
+    <value>Sin Conciliar</value>
+  </data>
+  <data name="DashboardCantidadPendientesSupervision" xml:space="preserve">
+    <value>Pendientes de aprobar</value>
+  </data>
+  <data name="DashboardDescripcion" xml:space="preserve">
+    <value>Reconciliation</value>
+  </data>
+  <data name="DashboardEstadoConciliacion" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="DashboardFechaConciliacion" xml:space="preserve">
+    <value>Fecha Proceso</value>
+  </data>
+  <data name="DashboardFechaEjecucion" xml:space="preserve">
+    <value>Fecha Carga</value>
+  </data>
+  <data name="DashboardFechaEstadoConciliacion" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="DashboardItemsOrigen1" xml:space="preserve">
+    <value>Item A</value>
+  </data>
+  <data name="DashboardItemsOrigen2" xml:space="preserve">
+    <value>Item B</value>
+  </data>
+  <data name="DashboardUsuarioId" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Está seguro que desea eliminar este elemento?</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="Diseno" xml:space="preserve">
+    <value>Diseño</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="Empresa" xml:space="preserve">
+    <value>Empresa</value>
+  </data>
+  <data name="ErrorConciliacionAuto" xml:space="preserve">
+    <value>Ha ocurrido un error en la conciliación. Revise el log para mas detalles.</value>
+  </data>
+  <data name="ErrorSeleccionManual" xml:space="preserve">
+    <value>Debe seleccionar al menos un registro.</value>
+  </data>
+  <data name="Error_Cotizacion" xml:space="preserve">
+    <value>Error al cotizar. Cotización de las monedas no existente</value>
+  </data>
+  <data name="Error_GeneralMessage" xml:space="preserve">
+    <value>Ocurrio un error mientras se procesaba la operación</value>
+  </data>
+  <data name="Error_NotAuthorizedMessage" xml:space="preserve">
+    <value>No esta autorizado para dicha operación</value>
+  </data>
+  <data name="Error_NotFoundMessage" xml:space="preserve">
+    <value>Pagina no encontrada</value>
+  </data>
+  <data name="Error_PermissionDeniedMessage" xml:space="preserve">
+    <value>Permiso denegado</value>
+  </data>
+  <data name="Especie" xml:space="preserve">
+    <value>Especie</value>
+  </data>
+  <data name="EspecieNeg" xml:space="preserve">
+    <value>Especie Neg.</value>
+  </data>
+  <data name="Estado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="EstadoCarga" xml:space="preserve">
+    <value>Estado Carga</value>
+  </data>
+  <data name="EstadoConciliacion" xml:space="preserve">
+    <value>Estado Conciliación</value>
+  </data>
+  <data name="Fecha" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="FechaAlta" xml:space="preserve">
+    <value>Fecha Alta</value>
+  </data>
+  <data name="FechaConciliacion" xml:space="preserve">
+    <value>Fecha Conciliación</value>
+  </data>
+  <data name="FechaEjecucion" xml:space="preserve">
+    <value>Fecha Ejecución</value>
+  </data>
+  <data name="FechaEstadoConciliacion" xml:space="preserve">
+    <value>Fecha Estado Conciliación</value>
+  </data>
+  <data name="FechaOrigen" xml:space="preserve">
+    <value>Fecha de Concertación</value>
+  </data>
+  <data name="FechaVence" xml:space="preserve">
+    <value>Fecha Liquidación</value>
+  </data>
+  <data name="FuenteTitle" xml:space="preserve">
+    <value>Fuentes</value>
+  </data>
+  <data name="Interes" xml:space="preserve">
+    <value>Interés</value>
+  </data>
+  <data name="ItemsOrigen1" xml:space="preserve">
+    <value>Items Origen 1</value>
+  </data>
+  <data name="ItemsOrigen2" xml:space="preserve">
+    <value>Items Origen 2</value>
+  </data>
+  <data name="Liquidado" xml:space="preserve">
+    <value>Liquidado</value>
+  </data>
+  <data name="Login_InactiveUser" xml:space="preserve">
+    <value>Usuario Inactivo</value>
+  </data>
+  <data name="Login_InvalidUser" xml:space="preserve">
+    <value>El usuario es inválido</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Cerrar Sesión</value>
+  </data>
+  <data name="Mercado" xml:space="preserve">
+    <value>Mercado</value>
+  </data>
+  <data name="Monto" xml:space="preserve">
+    <value>Monto</value>
+  </data>
+  <data name="Motivo" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="NombreCompleto" xml:space="preserve">
+    <value>Nombre Completo</value>
+  </data>
+  <data name="NombreUsuario_Requerido" xml:space="preserve">
+    <value>Nombre de usuario requerido</value>
+  </data>
+  <data name="Numero" xml:space="preserve">
+    <value>Número</value>
+  </data>
+  <data name="Observaciones" xml:space="preserve">
+    <value>Observaciones</value>
+  </data>
+  <data name="Operador" xml:space="preserve">
+    <value>Operador</value>
+  </data>
+  <data name="Orden" xml:space="preserve">
+    <value>Orden</value>
+  </data>
+  <data name="Plazo" xml:space="preserve">
+    <value>Plazo</value>
+  </data>
+  <data name="ProcesarOrigenes" xml:space="preserve">
+    <value>Procesar</value>
+  </data>
+  <data name="RazonSocial" xml:space="preserve">
+    <value>Razón Social</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>No cerrar sesión</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Success_Lecture" xml:space="preserve">
+    <value>Captura de datos del BCRA exitosa</value>
+  </data>
+  <data name="TipoNroDoc" xml:space="preserve">
+    <value>Tipo y Número de Documento</value>
+  </data>
+  <data name="TipoOperacion" xml:space="preserve">
+    <value>Tipo de Operación</value>
+  </data>
+  <data name="TiposCartera" xml:space="preserve">
+    <value>Tipos de Cartera</value>
+  </data>
+  <data name="TiposCuentaCustodia" xml:space="preserve">
+    <value>Tipos de Cuentas Custodia</value>
+  </data>
+  <data name="Tna" xml:space="preserve">
+    <value>TNA</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="UsuarioAlta" xml:space="preserve">
+    <value>Usuario Alta</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Versión: 1.1.0.0</value>
+  </data>
+  <data name="FechaDesde" xml:space="preserve">
+    <value>Fecha Desde</value>
+  </data>
+  <data name="FechaHasta" xml:space="preserve">
+    <value>Fecha Hasta</value>
+  </data>
+  <data name="Liquidadas" xml:space="preserve">
+    <value>Liquidadas</value>
+  </data>
+  <data name="Canal" xml:space="preserve">
+    <value>Canal</value>
+  </data>
+  <data name="CategoriaGanancias" xml:space="preserve">
+    <value>Categoria Ganancias</value>
+  </data>
+  <data name="Porcentaje" xml:space="preserve">
+    <value>Porcentaje</value>
+  </data>
+  <data name="TipoConcepto" xml:space="preserve">
+    <value>Tipo Concepto</value>
+  </data>
+  <data name="ConceptoBCRA" xml:space="preserve">
+    <value>Concepto BCRA</value>
+  </data>
+  <data name="Compras" xml:space="preserve">
+    <value>Compras</value>
+  </data>
+  <data name="DiferenciaPPCompras" xml:space="preserve">
+    <value>Diferencia PP Compras</value>
+  </data>
+  <data name="DiferenciaPPVentas" xml:space="preserve">
+    <value>Diferencia PP Ventas</value>
+  </data>
+  <data name="MTM" xml:space="preserve">
+    <value>MTM</value>
+  </data>
+  <data name="Neto" xml:space="preserve">
+    <value>Neto</value>
+  </data>
+  <data name="PPCompras" xml:space="preserve">
+    <value>PPCompras</value>
+  </data>
+  <data name="PPVentas" xml:space="preserve">
+    <value>PPVentas</value>
+  </data>
+  <data name="PrecioMercado" xml:space="preserve">
+    <value>Precio de Mercado</value>
+  </data>
+  <data name="Spread" xml:space="preserve">
+    <value>Spread</value>
+  </data>
+  <data name="Ventas" xml:space="preserve">
+    <value>Ventas</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="CantidadExpresada" xml:space="preserve">
+    <value>Cantidad Expresada</value>
+  </data>
+  <data name="CantidadMoneda" xml:space="preserve">
+    <value>Cantidad Moneda</value>
+  </data>
+  <data name="Cuenta" xml:space="preserve">
+    <value>Cuenta</value>
+  </data>
+  <data name="EspecieMoneda" xml:space="preserve">
+    <value>Especie Moneda</value>
+  </data>
+  <data name="Formato" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="Importe" xml:space="preserve">
+    <value>Importe</value>
+  </data>
+  <data name="NumeroDocumento" xml:space="preserve">
+    <value>Número de Documento</value>
+  </data>
+  <data name="Precio" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="Sucursal" xml:space="preserve">
+    <value>Sucursal</value>
+  </data>
+  <data name="Texto" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="Tipo" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="TipoPrecio" xml:space="preserve">
+    <value>Tipo Precio</value>
+  </data>
+  <data name="BoletoMAE" xml:space="preserve">
+    <value>Boleto MAE</value>
+  </data>
+  <data name="CantContratos" xml:space="preserve">
+    <value>Cantidad de Contratos</value>
+  </data>
+  <data name="ContraparteMAE" xml:space="preserve">
+    <value>Contraparte MAE</value>
+  </data>
+  <data name="EspecieMAE" xml:space="preserve">
+    <value>Especie MAE</value>
+  </data>
+  <data name="EspevtoOCT" xml:space="preserve">
+    <value>Vencimiento Especie OCT</value>
+  </data>
+  <data name="IdMAE" xml:space="preserve">
+    <value>Id MAE</value>
+  </data>
+  <data name="MsgError" xml:space="preserve">
+    <value>Mensaje de Error</value>
+  </data>
+  <data name="MsgMAE" xml:space="preserve">
+    <value>Mensaje MAE</value>
+  </data>
+  <data name="NumeroOperacion" xml:space="preserve">
+    <value>Número de Operación</value>
+  </data>
+  <data name="RepoAsoc" xml:space="preserve">
+    <value>Repo. Asoc.</value>
+  </data>
+  <data name="Reprocesado" xml:space="preserve">
+    <value>Reprocesado</value>
+  </data>
+  <data name="ResolucionManual" xml:space="preserve">
+    <value>Resolución Manual</value>
+  </data>
+  <data name="SecuenciaMAE" xml:space="preserve">
+    <value>Secuencia MAE</value>
+  </data>
+  <data name="TipoLiqMAE" xml:space="preserve">
+    <value>Tipo de Liquidación MAE</value>
+  </data>
+  <data name="UsuarioReproceso" xml:space="preserve">
+    <value>Usuario Reproceso</value>
+  </data>
+  <data name="UsuarioResolucionManual" xml:space="preserve">
+    <value>Usuario Resolución Manual</value>
+  </data>
+  <data name="RuedasMAE" xml:space="preserve">
+    <value>Ruedas MAE</value>
+  </data>
+  <data name="Alias" xml:space="preserve">
+    <value>Alias</value>
+  </data>
+  <data name="Sector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="JurisdiccionesFondos" xml:space="preserve">
+    <value>Jurisdicciones Fondos</value>
+  </data>
+  <data name="TiposVinculadosCuentasCustodia" xml:space="preserve">
+    <value>Tipos Vinculados Cuentas Custodia</value>
+  </data>
+  <data name="Obligatorio" xml:space="preserve">
+    <value>Obligatorio</value>
+  </data>
+  <data name="IndicesAjustes" xml:space="preserve">
+    <value>Índices Ajustes</value>
+  </data>
+  <data name="Cliente" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="OperacionesDelDia" xml:space="preserve">
+    <value>Consulta De Operaciones</value>
+  </data>
+  <data name="OperacionesOCTVigentes" xml:space="preserve">
+    <value>Operaciones OCT Vigentes</value>
+  </data>
+  <data name="PrecioTransferencia" xml:space="preserve">
+    <value>Precio de Transferencia</value>
+  </data>
+  <data name="ZoomOperacion" xml:space="preserve">
+    <value>Detalles de Operación</value>
+  </data>
+  <data name="ControlOperacionesMAE" xml:space="preserve">
+    <value>Control Operaciones MAE</value>
+  </data>
+  <data name="OperacionesVigentes" xml:space="preserve">
+    <value>Operaciones Vigentes</value>
+  </data>
+  <data name="Pase" xml:space="preserve">
+    <value>Pase</value>
+  </data>
+  <data name="MontoTotal" xml:space="preserve">
+    <value>Monto Total</value>
+  </data>
+  <data name="MTMHistorico" xml:space="preserve">
+    <value>MTM Histórico</value>
+  </data>
+  <data name="FechaMTM" xml:space="preserve">
+    <value>Fecha MTM</value>
+  </data>
+  <data name="OperacionesMAE" xml:space="preserve">
+    <value>Operaciones MAE</value>
+  </data>
+  <data name="Valuacion" xml:space="preserve">
+    <value>Valuación</value>
+  </data>
+  <data name="VencimientoOperaciones" xml:space="preserve">
+    <value>Vencimiento de Operaciones</value>
+  </data>
+  <data name="OperacionesALiquidar" xml:space="preserve">
+    <value>Operaciones A Liquidar</value>
+  </data>
+  <data name="EnteLiquidador" xml:space="preserve">
+    <value>Ente Liquidador</value>
+  </data>
+  <data name="FPC" xml:space="preserve">
+    <value>FPC</value>
+  </data>
+  <data name="NumeroMAE" xml:space="preserve">
+    <value>Número MAE</value>
+  </data>
+  <data name="OperacionesATermino" xml:space="preserve">
+    <value>Operaciones A Término</value>
+  </data>
+  <data name="Cotizacion" xml:space="preserve">
+    <value>Cotización</value>
+  </data>
+  <data name="ImporteOriginal" xml:space="preserve">
+    <value>Importe Original</value>
+  </data>
+  <data name="Revaluo" xml:space="preserve">
+    <value>Revalúo</value>
+  </data>
+  <data name="Autorizadas" xml:space="preserve">
+    <value>Autorizadas</value>
+  </data>
+  <data name="EFN" xml:space="preserve">
+    <value>Entidades Financieras Nacionales</value>
+  </data>
+  <data name="NEFN" xml:space="preserve">
+    <value>No Entidades Financieras Nacionales</value>
+  </data>
+  <data name="Pendiente" xml:space="preserve">
+    <value>Pendiente</value>
+  </data>
+  <data name="Rechazadas" xml:space="preserve">
+    <value>Rechazadas</value>
+  </data>
+  <data name="Todas" xml:space="preserve">
+    <value>Todas</value>
+  </data>
+  <data name="ConfirmacionOperaciones" xml:space="preserve">
+    <value>Confirmación de Operaciones</value>
+  </data>
+  <data name="OperacionAutorizada" xml:space="preserve">
+    <value>Operación Autorizada</value>
+  </data>
+  <data name="OperacionRechazada" xml:space="preserve">
+    <value>Operación Rechazada</value>
+  </data>
+  <data name="TipoCliente" xml:space="preserve">
+    <value>Tipo de Cliente</value>
+  </data>
+  <data name="PortfolioCarteraPropia" xml:space="preserve">
+    <value>Portfolio Cartera Propia</value>
+  </data>
+  <data name="ExtractoCuentaCustodia" xml:space="preserve">
+    <value>Extracto Cuenta Custodia</value>
+  </data>
+  <data name="CuentaCustodia" xml:space="preserve">
+    <value>Cuenta Custodia</value>
+  </data>
+  <data name="IncluirBloqueos" xml:space="preserve">
+    <value>Incluir Bloqueos</value>
+  </data>
+  <data name="Concepto" xml:space="preserve">
+    <value>Concepto</value>
+  </data>
+  <data name="Saldo" xml:space="preserve">
+    <value>Saldo</value>
+  </data>
+  <data name="Cantidad" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="SaldoBloqueadoExterno" xml:space="preserve">
+    <value>Saldo Bloqueado Externo</value>
+  </data>
+  <data name="SaldoBloqueadoInterno" xml:space="preserve">
+    <value>Saldo Bloqueado Interno</value>
+  </data>
+  <data name="SaldoInmovilizado" xml:space="preserve">
+    <value>Saldo Inmovilizado</value>
+  </data>
+  <data name="CodigosMatching" xml:space="preserve">
+    <value>Códigos Matching</value>
+  </data>
+  <data name="ModosDeLiquidacion" xml:space="preserve">
+    <value>Modos de Liquidación</value>
+  </data>
+  <data name="LeyendaLayout" xml:space="preserve">
+    <value>Soporte: helpdesk.comercial@sgm.com.ar | Tel/Fax: (5411) 4382-26-16 / 4372-6535</value>
+  </data>
+  <data name="Aforo" xml:space="preserve">
+    <value>Aforo</value>
+  </data>
+  <data name="CalifClienteCalificacion" xml:space="preserve">
+    <value>Calificación</value>
+  </data>
+  <data name="CalifClienteMargen" xml:space="preserve">
+    <value>Margen</value>
+  </data>
+  <data name="CalifClienteUtilizado" xml:space="preserve">
+    <value>Utilizado</value>
+  </data>
+  <data name="CodigoReferencia" xml:space="preserve">
+    <value>Código Referencia</value>
+  </data>
+  <data name="CodigoSector" xml:space="preserve">
+    <value>Código Sector</value>
+  </data>
+  <data name="ContraOperCapital" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="ContraOperCorresponsal" xml:space="preserve">
+    <value>Corresponsal</value>
+  </data>
+  <data name="ContraOperEspecie" xml:space="preserve">
+    <value>Especie</value>
+  </data>
+  <data name="ContraOperNumeroOperacion" xml:space="preserve">
+    <value>Operación</value>
+  </data>
+  <data name="ContraOperPrecio" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="ContraOperTipoOperacion" xml:space="preserve">
+    <value>Tipo de Operación</value>
+  </data>
+  <data name="Corredor" xml:space="preserve">
+    <value>Corredor</value>
+  </data>
+  <data name="Corresponsal" xml:space="preserve">
+    <value>Corresponsal</value>
+  </data>
+  <data name="FechaSupervision" xml:space="preserve">
+    <value>Fecha Supervisión</value>
+  </data>
+  <data name="IdSideba" xml:space="preserve">
+    <value>Id Sideba</value>
+  </data>
+  <data name="IVAComision" xml:space="preserve">
+    <value>IVA Comisión</value>
+  </data>
+  <data name="MargenOperador" xml:space="preserve">
+    <value>Margen Operador</value>
+  </data>
+  <data name="MonedaNegociacion" xml:space="preserve">
+    <value>Moneda de Negociación</value>
+  </data>
+  <data name="NumeroCertificado" xml:space="preserve">
+    <value>Número de Certificado</value>
+  </data>
+  <data name="ResponsableComercial" xml:space="preserve">
+    <value>Responsable Comercial</value>
+  </data>
+  <data name="SuperaLimiteEfectivo" xml:space="preserve">
+    <value>Supera Límite Efectivo</value>
+  </data>
+  <data name="Supervisor" xml:space="preserve">
+    <value>Usuario Supervisor</value>
+  </data>
+  <data name="TipoAforo" xml:space="preserve">
+    <value>Tipo de Aforo</value>
+  </data>
+  <data name="TipoReferencia" xml:space="preserve">
+    <value>Tipo Referencia</value>
+  </data>
+  <data name="VR" xml:space="preserve">
+    <value>VR</value>
+  </data>
+  <data name="ClienteCalificacion" xml:space="preserve">
+    <value>Calificación Cliente</value>
+  </data>
+  <data name="Comision" xml:space="preserve">
+    <value>Comisión</value>
+  </data>
+  <data name="ContraOperacion" xml:space="preserve">
+    <value>Contra Operación</value>
+  </data>
+  <data name="DatosGenerales" xml:space="preserve">
+    <value>Datos Generales</value>
+  </data>
+  <data name="ResponsableInversion" xml:space="preserve">
+    <value>Responsable Inversión</value>
+  </data>
+  <data name="CantidadCuotapartes" xml:space="preserve">
+    <value>Cantidad de Cuotapartes</value>
+  </data>
+  <data name="CuentaCuotapartista" xml:space="preserve">
+    <value>Cuenta Cuotapartista</value>
+  </data>
+  <data name="NumeroSolicitud" xml:space="preserve">
+    <value>Número Solicitud</value>
+  </data>
+  <data name="Orden2" xml:space="preserve">
+    <value>Orden 2</value>
+  </data>
+  <data name="ABMs" xml:space="preserve">
+    <value>ABMs</value>
+  </data>
+  <data name="Funciones" xml:space="preserve">
+    <value>Funciones</value>
+  </data>
+  <data name="FuncionesUsuario" xml:space="preserve">
+    <value>Funciones por Usuario</value>
+  </data>
+  <data name="Modulos" xml:space="preserve">
+    <value>Módulos</value>
+  </data>
+  <data name="ModulosUsuario" xml:space="preserve">
+    <value>Módulos por Usuario</value>
+  </data>
+  <data name="Operaciones" xml:space="preserve">
+    <value>Operaciones</value>
+  </data>
+  <data name="Reportes" xml:space="preserve">
+    <value>Reportes</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="RolesUsuario" xml:space="preserve">
+    <value>Roles por Usuario</value>
+  </data>
+  <data name="Seguridad" xml:space="preserve">
+    <value>Seguridad</value>
+  </data>
+  <data name="Usuarios" xml:space="preserve">
+    <value>Usuarios</value>
+  </data>
+  <data name="UsuarioDuplicado" xml:space="preserve">
+    <value>El usuario ya existe</value>
+  </data>
+  <data name="GrupoAD" xml:space="preserve">
+    <value>Grupo AD</value>
+  </data>
+  <data name="ModuloDuplicado" xml:space="preserve">
+    <value>El módulo ya existe</value>
+  </data>
+  <data name="NombreUsuario" xml:space="preserve">
+    <value>Nombre de Usuario</value>
+  </data>
+  <data name="RolDuplicado" xml:space="preserve">
+    <value>El rol ya existe</value>
+  </data>
+  <data name="Buscar" xml:space="preserve">
+    <value>Buscar Cotizaciones, Títulos o Empresas</value>
+  </data>
+  <data name="Seleccionado" xml:space="preserve">
+    <value>Seleccionado</value>
+  </data>
+  <data name="Canales" xml:space="preserve">
+    <value>Canales</value>
+  </data>
+  <data name="EsTrader" xml:space="preserve">
+    <value>Es Trader</value>
+  </data>
+  <data name="Legajo" xml:space="preserve">
+    <value>Legajo</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="Opera" xml:space="preserve">
+    <value>Opera</value>
+  </data>
+  <data name="Operadores" xml:space="preserve">
+    <value>Operadores</value>
+  </data>
+  <data name="FuncionesModulo" xml:space="preserve">
+    <value>Funciones por Módulo</value>
+  </data>
+  <data name="Guardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Rol" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="CompraVenta" xml:space="preserve">
+    <value>Compra/Venta</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="RuedaMAE" xml:space="preserve">
+    <value>Rueda MAE</value>
+  </data>
+  <data name="EsCompra" xml:space="preserve">
+    <value>Es Compra?</value>
+  </data>
+  <data name="FCI" xml:space="preserve">
+    <value>FCI</value>
+  </data>
+  <data name="OperacionesTerceros" xml:space="preserve">
+    <value>Operaciones de Terceros</value>
+  </data>
+  <data name="ResultadoCapturaMAE" xml:space="preserve">
+    <value>Resultado Captura MAE</value>
+  </data>
+  <data name="Secuencia" xml:space="preserve">
+    <value>Secuencia</value>
+  </data>
+  <data name="Posicion" xml:space="preserve">
+    <value>Posición</value>
+  </data>
+  <data name="FechaModificacion" xml:space="preserve">
+    <value>Fecha Modificación</value>
+  </data>
+  <data name="Modificado" xml:space="preserve">
+    <value>Modificado</value>
+  </data>
+  <data name="TipoCartera" xml:space="preserve">
+    <value>Tipo Cartera</value>
+  </data>
+  <data name="UsuarioModificacion" xml:space="preserve">
+    <value>Usuario Modificación</value>
+  </data>
+  <data name="EsBloqueo" xml:space="preserve">
+    <value>Es Bloqueo?</value>
+  </data>
+  <data name="Manual" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="TipoCuentaCustodia" xml:space="preserve">
+    <value>Tipos de Cuenta Custodia</value>
+  </data>
+  <data name="TipoDeBloqueo" xml:space="preserve">
+    <value>Tipo de Bloqueo</value>
+  </data>
+  <data name="CodigoClienteUnico" xml:space="preserve">
+    <value>Código Cliente Único</value>
+  </data>
+  <data name="TipoBloqueoCuentaCustodia" xml:space="preserve">
+    <value>Tipos de Bloqueo de Cuenta Custodia</value>
+  </data>
+  <data name="Error_ExpiredMessage" xml:space="preserve">
+    <value>La sesión ha expirado</value>
+  </data>
+  <data name="NoLiquidadas" xml:space="preserve">
+    <value>No Liquidadas</value>
+  </data>
+  <data name="GestionTRD" xml:space="preserve">
+    <value>Gestión TRD</value>
+  </data>
+  <data name="Tablas" xml:space="preserve">
+    <value>Tablas</value>
+  </data>
+  <data name="MensajeError" xml:space="preserve">
+    <value>Mensaje de Error</value>
+  </data>
+  <data name="Comentarios" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="Reprocesar" xml:space="preserve">
+    <value>Reprocesar</value>
+  </data>
+  <data name="Resolver" xml:space="preserve">
+    <value>Resolver</value>
+  </data>
+  <data name="Volver" xml:space="preserve">
+    <value>Volver</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="SaldoInicial" xml:space="preserve">
+    <value>Saldo Inicial</value>
+  </data>
+  <data name="SaldosPorCliente" xml:space="preserve">
+    <value>Tenencia de Bonos y Acciones</value>
+  </data>
+  <data name="Comitente" xml:space="preserve">
+    <value>Comitente</value>
+  </data>
+  <data name="Depositante" xml:space="preserve">
+    <value>Depositante</value>
+  </data>
+  <data name="CuentaComitente" xml:space="preserve">
+    <value>Cuenta Comitente</value>
+  </data>
+  <data name="TenenciaValorizada" xml:space="preserve">
+    <value>Monto (GS)</value>
+  </data>
+  <data name="Tenencia" xml:space="preserve">
+    <value>Tenencia</value>
+  </data>
+  <data name="Ubicacion" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="Monedas" xml:space="preserve">
+    <value>Monedas</value>
+  </data>
+  <data name="Titulos" xml:space="preserve">
+    <value>Títulos</value>
+  </data>
+  <data name="CambiarContrasena" xml:space="preserve">
+    <value>Cambio de Contraseña</value>
+  </data>
+  <data name="NuevaContrasena" xml:space="preserve">
+    <value>Nueva Contraseña</value>
+  </data>
+  <data name="RepetirContrasena" xml:space="preserve">
+    <value>Repetir Contraseña</value>
+  </data>
+  <data name="Error_MismaContrasena" xml:space="preserve">
+    <value>La contraseña ingresada ya ha sigo utilizada anteriormente</value>
+  </data>
+  <data name="Error_CampoIncompleto" xml:space="preserve">
+    <value>Uno o mas campos requeridos no fueron completados</value>
+  </data>
+  <data name="Error_ContrasenasNoCoinciden" xml:space="preserve">
+    <value>Las contraseñas no coinciden</value>
+  </data>
+  <data name="ContrasenaRequisitos" xml:space="preserve">
+    <value>La contraseña debe contener como mínimo 8 caracteres, alternando mayúsculas, minúsculas, números y caracteres alfanuméricos</value>
+  </data>
+  <data name="ContrasenaActual" xml:space="preserve">
+    <value>Contraseña Actual</value>
+  </data>
+  <data name="Error_ContrasenaIncorrecta" xml:space="preserve">
+    <value>La contraseña actual es incorrecta</value>
+  </data>
+  <data name="Tenencias" xml:space="preserve">
+    <value>Tenencias</value>
+  </data>
+  <data name="FechaConcertacion" xml:space="preserve">
+    <value>Fecha Concertación</value>
+  </data>
+  <data name="FechaLiquidacion" xml:space="preserve">
+    <value>Fecha Liquidación</value>
+  </data>
+  <data name="Aceptar" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="ContrasenaModificada" xml:space="preserve">
+    <value>Su contraseña ha sido guardada correctamente.</value>
+  </data>
+  <data name="Mensaje" xml:space="preserve">
+    <value>Mensaje</value>
+  </data>
+  <data name="ErrorContrasenaRequisitos" xml:space="preserve">
+    <value>La contraseña no cumple con los requisitos de seguridad</value>
+  </data>
+  <data name="SaldoDisponible" xml:space="preserve">
+    <value>Saldo Disponible</value>
+  </data>
+  <data name="HistoriaMovimientos" xml:space="preserve">
+    <value>Historial de Movimientos</value>
+  </data>
+  <data name="Inicio" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="CantidadVN" xml:space="preserve">
+    <value>Cantidad VN</value>
+  </data>
+  <data name="Consultas" xml:space="preserve">
+    <value>Consultas</value>
+  </data>
+  <data name="Movimientos" xml:space="preserve">
+    <value>Movimientos</value>
+  </data>
+  <data name="Especies" xml:space="preserve">
+    <value>Especies</value>
+  </data>
+  <data name="LeyendaTenencias1" xml:space="preserve">
+    <value>Información al cierre del día hábil anterior. El cuadro Especies incluye/(excluye) títulos cuyas operaciones de compra/(venta) están pendientes de liquidación. Los importes y valores expresados son meramente indicativos pudiendo diferir de los vigentes en el mercado y variar de acuerdo a las fluctuaciones del mismo. Se consideran precios de referencia siempre y cuando haya un precio de cotización durante los últimos 30 días. En caso contrario figurará SC (sin cotización). Toda operatoria y/o decisión de inversión en valores negociables puede implicar riesgos.  Cualquier estimación y/o análisis de inversión es subjetivo y deberá ser efectuada por el eventual inversor y/o cliente en base a su propio análisis e investigación independiente sobre cada valor negociable que efectúe con sus propios asesores financieros y/o contables y/o los que estime convenientes y teniendo en cuenta los términos y condiciones de cada valor negociable en cuestión. BACS Banco de Crédito y Securitización S.A. quedará exento por las decisiones que pudieran tomar los eventuales inversores y/o clientes al efecto, así como los daños y/o perjuicios que pudieran ocasionarse como consecuencia y/o en ocasión del uso de la información aquí provista. Ante cualquier consulta y/o información podrá comunicarse al 0800-333-2227 o  diríjase personalmente en horario bancario a este Banco.</value>
+  </data>
+  <data name="TenenciaGuaranies" xml:space="preserve">
+    <value>Tenencia (en Guaranies)</value>
+  </data>
+  <data name="Extracto" xml:space="preserve">
+    <value>Extracto</value>
+  </data>
+  <data name="EstadoDeCuentaLeyenda" xml:space="preserve">
+    <value>Usted puede descargar los Estados de Cuenta de los últimos seis meses. Seleccione la fecha que necesita, imprímalo o guárdelo en su computadora si lo desea.</value>
+  </data>
+  <data name="EstadoDeCuentaPDF" xml:space="preserve">
+    <value>Estado De Cuenta en PDF</value>
+  </data>
+  <data name="LeyendaExtracto" xml:space="preserve">
+    <value>S.E.U.O.
+Toda operatoria y/o decisión de inversión en valores negociables puede implicar riesgos. Cualquier estimación y/o análisis de inversión es subjetivo y deberá ser efectuada por el eventual inversor y/o cliente en base a su propio análisis e investigación independiente sobre cada valor negociable que efectúe con sus propios asesores financieros y/o contables y/o los que estime convenientes y teniendo en cuenta los términos y condiciones de cada valor negociable en cuestión. BACS Banco de Crédito y Securitización S.A. quedará exento por las decisiones que pudieran tomar los eventuales inversores y/o clientes al efecto, así como los daños y/o perjuicios que pudieran ocasionarse como consecuencia y/o en ocasión del uso de la información aquí provista. Ante cualquier consulta y/o información podrá comunicarse al 0800-333-2227 o diríjase personalmente en horario bancario a este Banco.
+
+BACS BANCO DE CREDITO Y SECURITIZACIÓN S.A. ENTIDAD FINANCIERA. AGENTE DE LIQUIDACION Y COMPENSACION Y AGENTE DE NEGOCIACION INTEGRAL (ALYC). MATRICULA NRO. 25 DE LA CNV. AGENTE MAE 645. AGENTE ADHERIDO AL MERVAL Y ROFEX. TUCUMAN 1 PISO 19 “A”. C1040AAA. Tel.4329-4201. Página web WWW.BACS.COM.AR”</value>
+  </data>
+  <data name="TituloMovimientosPDF" xml:space="preserve">
+    <value>Movimientos</value>
+  </data>
+  <data name="CuentaComitentePDF" xml:space="preserve">
+    <value>Cuenta Comitente: </value>
+  </data>
+  <data name="Periodo" xml:space="preserve">
+    <value>Período</value>
+  </data>
+  <data name="ComposicionCartera" xml:space="preserve">
+    <value>Composición de Cartera</value>
+  </data>
+  <data name="DisponibilidadDolares" xml:space="preserve">
+    <value>Disponibilidad Dolares (USD)</value>
+  </data>
+  <data name="DisponibilidadMonedaLocal" xml:space="preserve">
+    <value>Disponibilidad Guaranies</value>
+  </data>
+  <data name="EstadoCuenta" xml:space="preserve">
+    <value>Estado de Cuenta de Fondos Comunes de Inversión</value>
+  </data>
+  <data name="IngresoAlSistema" xml:space="preserve">
+    <value>Ingrese a su cuenta</value>
+  </data>
+  <data name="LeyendaTenencias2" xml:space="preserve">
+    <value>BACS BANCO DE CREDITO Y SECURITIZACIÓN S.A. ENTIDAD FINANCIERA. AGENTE DE LIQUIDACION Y COMPENSACION Y AGENTE DE NEGOCIACION INTEGRAL (ALYC). MATRICULA NRO. 25 DE LA CNV. AGENTE MAE 645. AGENTE ADHERIDO AL MERVAL Y ROFEX. TUCUMAN 1 PISO 19 “A”. C1040AAA. Tel.4329-4200. Página web ”WWW.BACS.COM.AR”</value>
+  </data>
+  <data name="Moneda" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="PosicionTotal" xml:space="preserve">
+    <value>Posicion Total (expresado en Guaranies)</value>
+  </data>
+  <data name="ResumenMensual" xml:space="preserve">
+    <value>Resumen Mensual</value>
+  </data>
+  <data name="Superindice1" xml:space="preserve">
+    <value>(1)</value>
+  </data>
+  <data name="TipoCambio" xml:space="preserve">
+    <value>Tipo de Cambio</value>
+  </data>
+  <data name="TenenciaAl" xml:space="preserve">
+    <value>Tenencia al</value>
+  </data>
+  <data name="TituloTenenciasPDF" xml:space="preserve">
+    <value>Tenencias</value>
+  </data>
+  <data name="CuentasCustodia" xml:space="preserve">
+    <value>Elección de la Cuenta Custodia</value>
+  </data>
+  <data name="DisponibilidadDolarCable" xml:space="preserve">
+    <value>Disponibilidad Dolares Cable</value>
+  </data>
+  <data name="EnvioLink" xml:space="preserve">
+    <value>Se enviará un correo electrónico a la dirección de correo registrada para habilitar el acceso.</value>
+  </data>
+  <data name="Generar" xml:space="preserve">
+    <value>Generar contraseña</value>
+  </data>
+  <data name="OlvideContrasenia" xml:space="preserve">
+    <value>Olvidé mi contraseña</value>
+  </data>
+  <data name="Recuperar" xml:space="preserve">
+    <value>Recuperar contraseña</value>
+  </data>
+  <data name="Registrarse" xml:space="preserve">
+    <value>Solicitar contraseña</value>
+  </data>
+  <data name="CUITError" xml:space="preserve">
+    <value>El CI/RUC ingresado no es correcto</value>
+  </data>
+  <data name="MailError" xml:space="preserve">
+    <value>Debe registrar un correo electrónico, comuníquese con BASA</value>
+  </data>
+  <data name="MailError2" xml:space="preserve">
+    <value>El correo electrónico registrado no es correcto, comuníquese con BASA</value>
+  </data>
+  <data name="PreguntasSeguridad" xml:space="preserve">
+    <value>Preguntas de seguridad</value>
+  </data>
+  <data name="Respuesta" xml:space="preserve">
+    <value>Su respuesta</value>
+  </data>
+  <data name="SeleccionarPregunta" xml:space="preserve">
+    <value>Seleccione una pregunta de seguridad</value>
+  </data>
+  <data name="Respuesta_Requerido" xml:space="preserve">
+    <value>Respuesta a pregunta de seguridad requerida</value>
+  </data>
+  <data name="Volver2" xml:space="preserve">
+    <value>Volver al inicio de sesión</value>
+  </data>
+  <data name="EstadoInactivoClienteError" xml:space="preserve">
+    <value>Acceso bloqueado por superar cantidad de intentos fallidos, comuníquese con BASA para desbloquear</value>
+  </data>
+  <data name="RegistrarseError" xml:space="preserve">
+    <value>El CI/RUC ingresado ya se encuentra registrado en el sistema</value>
+  </data>
+  <data name="ContrasenaGuardada" xml:space="preserve">
+    <value>Contraseña guardada</value>
+  </data>
+  <data name="CuitSinPregunta" xml:space="preserve">
+    <value>El CI/RUC ingresado no tiene asociada una pregunta de seguridad. Por favor, comuníquese con BASA</value>
+  </data>
+  <data name="ErrorRespuestasNoCoinciden" xml:space="preserve">
+    <value>La respuesta no coincide con la registrada en nuestra base de datos. Reintente o comuníquese con BASA para solucionar el problema.</value>
+  </data>
+  <data name="RegistroContrasena" xml:space="preserve">
+    <value>Registro de nueva contraseña</value>
+  </data>
+  <data name="RespuesasNoCoinciden" xml:space="preserve">
+    <value>La respuesta no coincide con la registrada en nuestra base de datos. Reintente o comuníquese con BASA para solucionar el problema.</value>
+  </data>
+  <data name="RespuestaRequerida" xml:space="preserve">
+    <value>Respuesta Requerida</value>
+  </data>
+  <data name="ClientesLoginError" xml:space="preserve">
+    <value>El CI/RUC ingresado no esta registrado en el sistema.</value>
+  </data>
+  <data name="CorreoEnviado" xml:space="preserve">
+    <value>Correo electrónico enviado</value>
+  </data>
+  <data name="ErrorLink" xml:space="preserve">
+    <value>El link ingresado es inválido o esta vencido</value>
+  </data>
+  <data name="LinkInvalido" xml:space="preserve">
+    <value>Link inválido</value>
+  </data>
+  <data name="Login_InvalidPass" xml:space="preserve">
+    <value>La contraseña es inválida</value>
+  </data>
+  <data name="Login_UsuarioBloqueado" xml:space="preserve">
+    <value>Acceso bloqueado por superar cantidad de intentos fallidos, comuníquese con BASA para desbloquear</value>
+  </data>
+  <data name="Mensaje2" xml:space="preserve">
+    <value>Por favor, revise la casilla de correo registrada para poder continuar.</value>
+  </data>
+  <data name="PassVencida" xml:space="preserve">
+    <value>Contraseña vencida</value>
+  </data>
+  <data name="ErrorSesionesActivas" xml:space="preserve">
+    <value>El usuario tiene el máximo de sesiones activas permitidas</value>
+  </data>
+  <data name="EmptyTable" xml:space="preserve">
+    <value>No hay datos para informar</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>Primero</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Ultimo</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Siguiente</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="Fondo" xml:space="preserve">
+    <value>Fondo</value>
+  </data>
+  <data name="Inversion" xml:space="preserve">
+    <value>Nueva Inversion</value>
+  </data>
+  <data name="Portfolio" xml:space="preserve">
+    <value>Portafolio</value>
+  </data>
+  <data name="CurrentStep" xml:space="preserve">
+    <value>Actual</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Cargando</value>
+  </data>
+  <data name="Pagination" xml:space="preserve">
+    <value>Paginado</value>
+  </data>
+  <data name="FechaVencimiento" xml:space="preserve">
+    <value>Fecha Vencimiento</value>
+  </data>
+  <data name="Consumos" xml:space="preserve">
+    <value>Consumos</value>
+  </data>
+  <data name="ImporteRequerido" xml:space="preserve">
+    <value>Debe ingresar un importe para continuar...</value>
+  </data>
+  <data name="Consultar" xml:space="preserve">
+    <value>Consultar</value>
+  </data>
+  <data name="NombreAfip" xml:space="preserve">
+    <value>Nombre Completo</value>
+  </data>
+  <data name="Credito" xml:space="preserve">
+    <value>Credito</value>
+  </data>
+  <data name="Debito" xml:space="preserve">
+    <value>Debito</value>
+  </data>
+  <data name="MonedaLocal" xml:space="preserve">
+    <value>Guaranies</value>
+  </data>
+  <data name="Perfil" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="TituloFondosPDF" xml:space="preserve">
+    <value>Fondos</value>
+  </data>
+  <data name="MonedaLocalCodigo" xml:space="preserve">
+    <value>69B</value>
+  </data>
+  <data name="Error_InternalError" xml:space="preserve">
+    <value>Error interno inesperado</value>
+  </data>
+  <data name="SolicitarContrasenia" xml:space="preserve">
+    <value>Solicitar contraseña</value>
+  </data>
+  <data name="FormularioContrasenia" xml:space="preserve">
+    <value>Formulario recuperación contraseña</value>
+  </data>
+  <data name="Celular_Requerido" xml:space="preserve">
+    <value>Celular requerido</value>
+  </data>
+  <data name="Cliente_Datos_Incorrectos" xml:space="preserve">
+    <value>Los datos ingresados no corresponden a un cliente existente</value>
+  </data>
+  <data name="Cliente_Existente" xml:space="preserve">
+    <value>El cliente ya existe en el sistema</value>
+  </data>
+  <data name="Email_Invalido" xml:space="preserve">
+    <value>Debe ingresar un email valido</value>
+  </data>
+  <data name="Email_Requerido" xml:space="preserve">
+    <value>Email requerido</value>
+  </data>
+  <data name="FechaNacimiento_Requerida" xml:space="preserve">
+    <value>Fecha de nacimiento requerida</value>
+  </data>
+  <data name="Formato_Incorrecto" xml:space="preserve">
+    <value>Formato incorrecto</value>
+  </data>
+  <data name="NroDocumento_Requerido" xml:space="preserve">
+    <value>Número de Documento requerido</value>
+  </data>
+  <data name="FieldMustBeDate" xml:space="preserve">
+    <value>El campo {0} debe ser una fecha</value>
+  </data>
+  <data name="FieldMustBeNumeric" xml:space="preserve">
+    <value>El campo {0} debe ser un número</value>
+  </data>
+  <data name="PropertyValueInvalid" xml:space="preserve">
+    <value>El valor '{0}' no es valido para {1} </value>
+  </data>
+  <data name="PropertyValueRequired" xml:space="preserve">
+    <value>Un valor es requerido</value>
+  </data>
+  <data name="Error_ConfirmPassword" xml:space="preserve">
+    <value>Las contraseñas ingresadas no coinciden. Por favor, vuelva a intentarlo!</value>
+  </data>
+  <data name="CUIT_Requerido" xml:space="preserve">
+    <value>CUIT es requerido</value>
+  </data>
+  <data name="Password_Requerido" xml:space="preserve">
+    <value>Contraseña requerida</value>
+  </data>
+  <data name="Celular_Incorrecto" xml:space="preserve">
+    <value>Formato incorrecto (Ejemplo: 0991-123456)</value>
+  </data>
+  <data name="Fecha_Invalida" xml:space="preserve">
+    <value>La fecha {0} es invalida</value>
+  </data>
+  <data name="CuentaFondo_Requerida" xml:space="preserve">
+    <value>Cuenta Fondo requerida</value>
+  </data>
+  <data name="CuentaMonetaria_Requerida" xml:space="preserve">
+    <value>Cuenta Monetaria requerida</value>
+  </data>
+  <data name="Fondo_Requerido" xml:space="preserve">
+    <value>Fondo requerido</value>
+  </data>
+  <data name="Importe_Requerido" xml:space="preserve">
+    <value>Importe requerido</value>
+  </data>
+  <data name="ComprobanteNoDisponible" xml:space="preserve">
+    <value>El comprobante no se encuentra disponible en este momento.</value>
+  </data>
+  <data name="Accion_Requerida" xml:space="preserve">
+    <value>Accion requerida</value>
+  </data>
+  <data name="Bono_Requerido" xml:space="preserve">
+    <value>Bono requerido</value>
+  </data>
+  <data name="Cuenta_Requerida" xml:space="preserve">
+    <value>Cuenta requerida</value>
+  </data>
+  <data name="Nominales_Requeridos" xml:space="preserve">
+    <value>Nominales requeridos</value>
+  </data>
+</root>

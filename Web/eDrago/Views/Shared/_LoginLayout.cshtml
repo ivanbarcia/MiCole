@@ -1,0 +1,76 @@
+﻿@using eDrago.Resources
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--
+    Version @typeof(eDrago.MvcApplication).Assembly.GetName().Version
+    Last deployed on @System.IO.File.GetLastWriteTime(typeof(eDrago.Controllers.BaseController).Assembly.Location)
+    -->
+
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - @Global.AppTitle</title>
+    <link href="@Url.Content("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="~/Content/OpenSans.css" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/login_new.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/style.css")" />
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/blockUI")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("form").submit(function () {
+                if ($('form').valid()) {
+                    $.blockUI({
+                        message: $('<div class="spiner-example"><div class="sk-spinner sk-spinner-chasing-dots"><div class="sk-dot1"></div><div class="sk-dot2"></div></div></div>'),
+                        css: {
+                            border: 'none',
+                            padding: '35px',
+                            backgroundColor: '#000',
+                            opacity: .5,
+                            color: '#fff'
+                        },
+                        complete: function () {
+                            $.unblockUI();
+                        },
+                        success: function () {
+                            $.unblockUI();
+                        }
+                    });
+                }
+            });
+
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
+<body>
+    
+    <div id="container">
+        <div id="body">
+            @RenderSection("featured", required: false)
+            @RenderBody()
+        </div>
+
+        <footer id="footer">
+            <div class="content-wrapper">
+
+                @*<span class="legales"><img src="~/Images/login/legales.png" alt="SGM" /></span>@Global.LeyendaLayout*@
+
+            </div>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

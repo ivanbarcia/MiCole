@@ -1,0 +1,3 @@
+﻿@model Decimal?
+
+@Html.TextBox("", Model.HasValue ? Model.Value : Model, new { @class = "decimal form-control", autocomplete = "false" } )

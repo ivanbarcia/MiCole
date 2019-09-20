@@ -1,0 +1,80 @@
+﻿@using eDrago.Resources
+@model eDrago.DAL.Models.Login
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@Scripts.Render("~/bundles/bootstrap")
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="~/Scripts/md5.js"></script>
+
+<style>
+    #Captcha {
+        display: block;
+        width: 300px;
+        height: 48px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+</style>
+
+<div class="container">
+
+    <h1>
+        <img src="@Url.Content("~/Images/login/logo.jpg")" />
+    </h1>
+
+    <h2>@Global.IngresoAlSistema</h2>
+
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+
+        <fieldset>
+
+            @Html.TextBoxFor(m => m.UserName, new { placeholder = "CI / RUC", style = "font-family:Arial", @data_toggle = "tooltip", @data_placement = "right", title = "Ingrese CI o RUC. Recuerde que el RUC debe contener el guión correspondiente", autocomplete = "off" })
+            @Html.ValidationMessageFor(m => m.UserName)
+
+            @Html.PasswordFor(m => m.Password, new { placeholder = Global.Contrasena, style = "font-family:Arial", autocomplete = "off", @readonly = "readonly", onfocus = "this.removeAttribute('readonly')" })
+            @Html.ValidationMessageFor(m => m.Password)
+
+            @if (Session["IntentosFallidos"] != null)
+            {
+                if ((int)Session["IntentosFallidos"] == 2)
+                {
+                <div id="Captcha" class="g-recaptcha" data-sitekey="@System.Configuration.ConfigurationManager.AppSettings["recaptchaPublickey"]"></div>
+                }
+            }
+
+            @Html.ValidationSummary(true)
+
+            <input type="submit" value="Iniciar Sesión" class="btn-primary login-primary">
+
+            <div class="text-center" style="padding-top: 20px;">
+                @Html.ActionLink(@Global.SolicitarContrasenia, "Index", "EnvioLink", new { ID = "1" }, null) &nbsp; &nbsp;
+                @Html.ActionLink(@Global.OlvideContrasenia, "Index", "EnvioLink", new { ID = "0" }, null)
+            </div>
+
+        </fieldset>
+    }
+
+</div>
+
+<script>
+    var padding = ($(window).height() / 2) - ($("#container .container").height() / 2) - 30;
+    $("#container .container").css("padding-top", padding + "px");
+
+    $(function () {
+        $("form").submit(function (e) {
+            if ($("#Password").val() !== "") {
+                var pass = $("#Password").val();
+                var passMD5 = hex_md5(pass);
+
+                $("#Password").val(passMD5);
+            }
+        });
+    });
+</script>

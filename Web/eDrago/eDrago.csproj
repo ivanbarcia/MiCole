@@ -1,0 +1,1995 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3224252-3A7C-4985-AAEA-5AE4C32831CD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eDrago</RootNamespace>
+    <AssemblyName>eDrago</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\Repositories\eDrago\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Repositories\eDrago\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\..\..\Repositories\eDrago\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc.resources">
+      <HintPath>..\..\..\Repositories\eDrago\Kendo.Mvc.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.4.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\Microsoft.Office.Interop.Word\15.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio, Version=5.28.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.28.3\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio.AspNet.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.AspNet.Common.5.20.1\lib\net45\Twilio.AspNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Twilio.AspNet.Mvc, Version=5.20.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.AspNet.Mvc.5.20.1\lib\net451\Twilio.AspNet.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.6\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FontAwesomeBundleConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Factory\NinjectControllerFactory.cs" />
+    <Compile Include="Filters\RedirectOnErrorAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\UserIdentity.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\error_style.css" />
+    <Content Include="Content\fa-brands.css" />
+    <Content Include="Content\fa-brands.min.css" />
+    <Content Include="Content\fa-regular.css" />
+    <Content Include="Content\fa-regular.min.css" />
+    <Content Include="Content\fa-solid.css" />
+    <Content Include="Content\fa-solid.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fontawesome-all.css" />
+    <Content Include="Content\fontawesome-all.min.css" />
+    <Content Include="Content\fontawesome.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\general.css" />
+    <Content Include="Content\images\animated-overlay.gif" />
+    <Content Include="Content\images\busy.gif" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\MyIcons\png\checked-checkbox-16.ico" />
+    <Content Include="Content\images\pdf-icon-16x16.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui-1.10.4.custom.css" />
+    <Content Include="Content\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="Content\KendoUI\Default\editor.png" />
+    <Content Include="Content\KendoUI\Default\imagebrowser.png" />
+    <Content Include="Content\KendoUI\Default\indeterminate.gif" />
+    <Content Include="Content\KendoUI\Default\loading-image.gif" />
+    <Content Include="Content\KendoUI\Default\loading.gif" />
+    <Content Include="Content\KendoUI\Default\loading_2x.gif" />
+    <Content Include="Content\KendoUI\Default\markers.png" />
+    <Content Include="Content\KendoUI\Default\markers_2x.png" />
+    <Content Include="Content\KendoUI\Default\slider-h.gif" />
+    <Content Include="Content\KendoUI\Default\slider-v.gif" />
+    <Content Include="Content\KendoUI\Default\sprite.png" />
+    <Content Include="Content\KendoUI\Default\sprite_2x.png" />
+    <Content Include="Content\KendoUI\Default\sprite_kpi.png" />
+    <Content Include="Content\KendoUI\Default\sprite_kpi_2x.png" />
+    <Content Include="Content\KendoUI\Fiori\fiori.css" />
+    <Content Include="Content\KendoUI\images\back.png" />
+    <Content Include="Content\KendoUI\images\kendoui.svg" />
+    <Content Include="Content\KendoUI\images\wp8_icons.png" />
+    <Content Include="Content\KendoUI\images\wp8_inverseicons.png" />
+    <Content Include="Content\KendoUI\kendo.common.min - copia.css" />
+    <Content Include="Content\KendoUI\kendo.common.min.css" />
+    <Content Include="Content\KendoUI\kendo.default.min.css" />
+    <Content Include="Content\KendoUI\kendo.material.min - copia.css" />
+    <Content Include="Content\KendoUI\kendo.material.min.css" />
+    <Content Include="Content\KendoUI\kendo.material.mobile.min.css" />
+    <Content Include="Content\KendoUI\Material\editor.png" />
+    <Content Include="Content\KendoUI\Material\imagebrowser.png" />
+    <Content Include="Content\KendoUI\Material\indeterminate.gif" />
+    <Content Include="Content\KendoUI\Material\loading-image.gif" />
+    <Content Include="Content\KendoUI\Material\loading.gif" />
+    <Content Include="Content\KendoUI\Material\loading_2x.gif" />
+    <Content Include="Content\KendoUI\Material\markers.png" />
+    <Content Include="Content\KendoUI\Material\markers_2x.png" />
+    <Content Include="Content\KendoUI\Material\slider-h.gif" />
+    <Content Include="Content\KendoUI\Material\slider-v.gif" />
+    <Content Include="Content\KendoUI\Material\sprite.png" />
+    <Content Include="Content\KendoUI\Material\sprite_2x.png" />
+    <Content Include="Content\KendoUI\Material\sprite_kpi.png" />
+    <Content Include="Content\KendoUI\Material\sprite_kpi_2x.png" />
+    <Content Include="Content\KendoUI\Material\_sprite.png" />
+    <Content Include="Content\KendoUI\Material\_sprite_2x.png" />
+    <Content Include="Content\KendoUI\Material\__sprite.png" />
+    <Content Include="Content\KendoUI\Material\__sprite_2x.png" />
+    <Content Include="Content\KendoUI\textures\brushed-metal.png" />
+    <Content Include="Content\KendoUI\textures\dots1.png" />
+    <Content Include="Content\KendoUI\textures\dots10.png" />
+    <Content Include="Content\KendoUI\textures\dots11.png" />
+    <Content Include="Content\KendoUI\textures\dots12.png" />
+    <Content Include="Content\KendoUI\textures\dots13.png" />
+    <Content Include="Content\KendoUI\textures\dots2.png" />
+    <Content Include="Content\KendoUI\textures\dots3.png" />
+    <Content Include="Content\KendoUI\textures\dots4.png" />
+    <Content Include="Content\KendoUI\textures\dots5.png" />
+    <Content Include="Content\KendoUI\textures\dots6.png" />
+    <Content Include="Content\KendoUI\textures\dots7.png" />
+    <Content Include="Content\KendoUI\textures\dots8.png" />
+    <Content Include="Content\KendoUI\textures\dots9.png" />
+    <Content Include="Content\KendoUI\textures\glass-lighter.png" />
+    <Content Include="Content\KendoUI\textures\glass.png" />
+    <Content Include="Content\KendoUI\textures\highlight.png" />
+    <Content Include="Content\KendoUI\textures\hsv-gradient.png" />
+    <Content Include="Content\KendoUI\textures\hue.png" />
+    <Content Include="Content\KendoUI\textures\leather1.png" />
+    <Content Include="Content\KendoUI\textures\leather2.png" />
+    <Content Include="Content\KendoUI\textures\noise.png" />
+    <Content Include="Content\KendoUI\textures\stripe1.png" />
+    <Content Include="Content\KendoUI\textures\stripe2.png" />
+    <Content Include="Content\KendoUI\textures\stripe3.png" />
+    <Content Include="Content\KendoUI\textures\stripe4.png" />
+    <Content Include="Content\KendoUI\textures\stripe5.png" />
+    <Content Include="Content\KendoUI\textures\stripe6.png" />
+    <Content Include="Content\KendoUI\textures\transparency.png" />
+    <Content Include="Content\KendoUI\textures\transtexture.png" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\login_new.css" />
+    <Content Include="Content\MaterialIcons.css" />
+    <Content Include="Content\Material\editor.png" />
+    <Content Include="Content\Material\imagebrowser.png" />
+    <Content Include="Content\Material\indeterminate.gif" />
+    <Content Include="Content\Material\loading-image.gif" />
+    <Content Include="Content\Material\loading.gif" />
+    <Content Include="Content\Material\loading_2x.gif" />
+    <Content Include="Content\Material\markers.png" />
+    <Content Include="Content\Material\markers_2x.png" />
+    <Content Include="Content\Material\slider-h.gif" />
+    <Content Include="Content\Material\slider-v.gif" />
+    <Content Include="Content\Material\sprite.png" />
+    <Content Include="Content\Material\sprite_2x.png" />
+    <Content Include="Content\Material\sprite_kpi.png" />
+    <Content Include="Content\Material\sprite_kpi_2x.png" />
+    <Content Include="Content\Material\_sprite.png" />
+    <Content Include="Content\Material\_sprite_2x.png" />
+    <Content Include="Content\Material\__sprite.png" />
+    <Content Include="Content\Material\__sprite_2x.png" />
+    <Content Include="Content\menu.css" />
+    <Content Include="Content\menu_original.css" />
+    <Content Include="Content\OpenSans.css" />
+    <Content Include="Content\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Content\plugins\bootstrap-markdown\bootstrap-markdown.min.css" />
+    <Content Include="Content\plugins\bootstrap-rtl\bootstrap-rtl.css" />
+    <Content Include="Content\plugins\bootstrap-rtl\bootstrap-rtl.min.css" />
+    <Content Include="Content\plugins\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="Content\plugins\bootstrapSocial\bootstrap-social.css" />
+    <Content Include="Content\plugins\bootstrapTour\bootstrap-tour.min.css" />
+    <Content Include="Content\plugins\datapicker\datepicker3.css" />
+    <Content Include="Content\plugins\dataTables\datatables.css" />
+    <Content Include="Content\plugins\dataTables\datatables.min.css" />
+    <Content Include="Content\plugins\iCheck\custom.css" />
+    <Content Include="Content\plugins\iCheck\green%402x.png" />
+    <Content Include="Content\plugins\iCheck\green.png" />
+    <Content Include="Content\plugins\iziToast-master\dist\css\iziToast.css" />
+    <Content Include="Content\plugins\iziToast-master\dist\css\iziToast.min.css" />
+    <Content Include="Content\plugins\iziToast-master\dist\js\iziToast.js" />
+    <Content Include="Content\plugins\iziToast-master\dist\js\iziToast.min.js" />
+    <Content Include="Content\plugins\iziToast-master\gulpfile.js" />
+    <Content Include="Content\plugins\iziToast-master\src\js\iziToast.js" />
+    <Content Include="Content\plugins\steps\jquery.steps.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="EmailTemplates\Recuperar.html" />
+    <Content Include="EmailTemplates\Registrarse.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontello.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\BasaCapital_Logo_PDF.png" />
+    <Content Include="Images\bullet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Filtrar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\gradient.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\legales.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\login\background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\login\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\login\legales.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\login\logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\login\pass.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\login\user.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logo_fondoAzul.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mailing\footer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mailing\header.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHL-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHL-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHL-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHM-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHM-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHM-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHS-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHS-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNHS-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNRL-3.0.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNRL-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNRM-3.0.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNRM-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNRS-3.0.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNRS-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVL-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVL-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVL-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVM-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVM-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVM-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVS-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVS-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CNVS-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURL-3.0.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURL-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURL-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURL-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURL-3.0_dyn.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURM-3.0.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURM-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURM-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURM-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURM-3.0_dyn.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURMini-3.0.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURMini-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURMini-3.0_dyn.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURS-3.0.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURS-3.0.jpg" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURS-3.0.png" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURS-3.0.swf" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\CURS-3.0_dyn.gif" />
+    <Content Include="Images\seals_swf_img_N-3.0_es\JavaScript-Seal-v3.0.js" />
+    <Content Include="Images\SPINNER.GIF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\app\inspinia.js" />
+    <Content Include="Scripts\app\skin.config.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.1.min.js" />
+    <Content Include="Scripts\lib\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\lib\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\lib\bootstrap.bundle.js" />
+    <Content Include="Scripts\lib\bootstrap.bundle.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Scripts\jquery.color-2.1.2.min.js" />
+    <Content Include="Scripts\md5.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\charting_library.min.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\ar-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\10.0b4b80ce7284d28083f7.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\13.87c51bb601702992e1dd.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\15.d0280d7e7496e08f4962.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\9.0f95ea8c401ed7b42af8.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\crosshair.6c091f7d5427d0c5e6d9dc3a90eb2b20.cur" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\dot.ed68e83c16f77203e73dbc4c3a7c7fa1.cur" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\ds-property-pages.4650c8fe6629bba016a1.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\editobjectdialog.1a53a3b4104302264052.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\eraser.0579d40b812fa2c3ffe72e5803a6e14c.cur" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\go-to-date-dialog-impl.4e462a33aa18010573c8.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\grab.bc156522a6b55a60be9fae15c14b66c5.cur" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\grabbing.1c0862a8a8c0fb02885557bc97fdafe7.cur" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\ie-fallback-logos.58dc8877847b4dced0e4.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\lazy-jquery-ui.ca86274e39963e6b5b5f.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\lazy-velocity.6843186d1d19426e2f3c.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\library.01ecad9b9548937f2d3ad7a1386065e0.css" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\library.0d361944a51eb9915ce0.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\lt-pane-views.9ecc943f945b2fd4fad6.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\objecttreedialog.e2f61129ab1c8c59ca83.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\propertypagesfactory.88d1e4b5f0c82c2d9b43.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\symbol-info-dialog-impl.1d95eab19af70ebdf07d.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\take-chart-image-dialog-impl.45288e052b450c5e2d11.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\vendors.9a5192b4c7a5579df994.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\vendors.a94ef44ed5c201cefcf6ad7460788c1a.css" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\bundles\zoom.e21f24dd632c7069139bc47ae89c54b5.cur" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\cs-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\da_DK-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\de-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\el-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\en-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\es-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\et_EE-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\fa-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\fonts\fontawesome-webfont.svg" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\fonts\fontawesome-webfont.woff" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\fr-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\he_IL-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\hu_HU-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\id_ID-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\balloon.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\bar-loader.gif" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\button-bg.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\charting_library\logo-widget-copyright-faded.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\charting_library\logo-widget-copyright.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\controlll.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\delayed.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\dialogs\checkbox.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\dialogs\close-flat.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\dialogs\large-slider-handle.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\dialogs\linewidth-slider.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\dialogs\opacity-slider.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\icons.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\prediction-clock-black.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\prediction-clock-white.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\prediction-failure-white.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\prediction-success-white.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\select-bg.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\sidetoolbar\instruments.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\sidetoolbar\toolgroup.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\svg\chart\bucket2.svg" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\svg\chart\font.svg" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\svg\chart\large-slider-handle.svg" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\svg\chart\pencil2.svg" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\svg\question-mark-rounded.svg" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\tvcolorpicker-bg-gradient.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\tvcolorpicker-bg.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\tvcolorpicker-check.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\tvcolorpicker-sprite.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\images\warning-icon.png" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\it-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\ja-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\ko-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\lib\external\spin.min.js" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\ms_MY-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\nl_NL-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\no-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\pl-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\pt-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\ro-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\ru-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\sk_SK-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\sv-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\th-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\tr-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\vi-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\zh-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\charting_library\static\zh_TW-tv-chart.aa0061904b783ada8056.html" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\.npmrc" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\dist\bundle.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\dist\polyfills.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\data-pulse-provider.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\helpers.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\history-provider.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\iquotes-provider.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\quotes-provider.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\quotes-pulse-provider.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\requester.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\symbols-storage.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\udf-compatible-datafeed-base.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\lib\udf-compatible-datafeed.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-jsx\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-jsx\inject.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-jsx\xhtml.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-object-spread\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-object-spread\inject.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\.gitattributes" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\bin\generate-identifier-regex.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\dist\acorn.es.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\dist\acorn.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\dist\acorn_loose.es.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\dist\acorn_loose.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\dist\walk.es.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\dist\walk.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\rollup\config.bin.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\rollup\config.loose.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\rollup\config.main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\rollup\config.walk.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\bin\acorn.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\expression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\identifier.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\location.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\locutil.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\loose\expression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\loose\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\loose\parseutil.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\loose\state.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\loose\statement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\loose\tokenize.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\lval.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\node.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\options.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\parseutil.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\state.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\statement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\tokencontext.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\tokenize.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\tokentype.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\util.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\walk\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\src\whitespace.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\ansi-regex\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\ansi-styles\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\balanced-match\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\brace-expansion\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\empty.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\example\async.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\example\sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\lib\async.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\lib\caller.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\lib\core.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\lib\node-modules-paths.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\lib\sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\core.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\dotdot.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\dotdot\abc\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\dotdot\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\faulty_basedir.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\filter.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\filter_sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\mock.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\mock_sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\module_dir.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\module_dir\xmodules\aaa\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\module_dir\ymodules\aaa\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\module_dir\zmodules\bbb\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\node_path.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\node_path\x\aaa\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\node_path\x\ccc\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\node_path\y\bbb\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\node_path\y\ccc\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\nonstring.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\pathfilter.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\pathfilter\deep_ref\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\pathfilter\deep_ref\node_modules\deep\alt.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\pathfilter\deep_ref\node_modules\deep\deeper\ref.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\pathfilter\deep_ref\node_modules\deep\ref.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\precedence.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\precedence\aaa.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\precedence\aaa\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\precedence\aaa\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\precedence\bbb.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\precedence\bbb\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\bar\node_modules\foo\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\baz\doom.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\baz\quux.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\biz\node_modules\garply\lib\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\biz\node_modules\grux\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\biz\node_modules\tiv\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\foo.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\incorrect_main\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\mug.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\other_path\lib\other-lib.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\other_path\root.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\punycode\node_modules\punycode\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\quux\foo\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\without_basedir\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\without_basedir\node_modules\mymodule.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver_sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\subdirs.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\bin\handleError.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\bin\runBuble.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\bin\showHelp.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\dist\buble.deps.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\dist\buble.es.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\dist\buble.umd.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\register.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\BlockStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\extractNames.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\keys.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\Node.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\Program.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\Scope.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ArrayExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ArrowFunctionExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\AssignmentExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\BinaryExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\BreakStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\CallExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ClassBody.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ClassDeclaration.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ClassExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ContinueStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ExportDefaultDeclaration.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ExportNamedDeclaration.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ForInStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ForOfStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ForStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\FunctionDeclaration.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\FunctionExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\Identifier.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\IfStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ImportDeclaration.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ImportDefaultSpecifier.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ImportSpecifier.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\JSXAttribute.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\JSXClosingElement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\JSXElement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\JSXExpressionContainer.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\JSXOpeningElement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\JSXSpreadAttribute.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\Literal.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\MemberExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\NewExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ObjectExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\Property.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ReturnStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\shared\LoopStatement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\shared\ModuleDeclaration.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\SpreadProperty.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\Super.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\TaggedTemplateExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\TemplateElement.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\TemplateLiteral.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\ThisExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\UpdateExpression.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\VariableDeclaration.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\types\VariableDeclarator.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\program\wrap.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\support.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\array.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\CompileError.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\deindent.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\destructure.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\getSnippet.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\isReference.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\locate.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\patterns.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\reserved.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\src\utils\spread.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\builtin-modules\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\builtin-modules\static.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\chalk\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\commander\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\concat-map\example\map.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\concat-map\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\concat-map\test\map.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\escape-string-regexp\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\estree-walker\dist\estree-walker.es6.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\estree-walker\dist\estree-walker.umd.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\estree-walker\src\estree-walker.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\has-ansi\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\is-module\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\dist\magic-string.cjs.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\dist\magic-string.es6.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\dist\magic-string.umd.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\Bundle.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\Chunk.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\MagicString.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\btoa.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\encodeMappings.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\getLocator.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\getRelativePath.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\guessIndent.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\hasOwnProp.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\isObject.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\SourceMap.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\src\utils\Stats.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimatch\minimatch.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\example\parse.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\all_bool.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\bool.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\dash.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\default_bool.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\dotted.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\kv_short.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\long.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\num.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\parse.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\parse_modified.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\short.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\stop_early.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\unknown.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\test\whitespace.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\os-homedir\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\path-parse\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\path-parse\test.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\.eslintrc.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\karma.conf.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\promise.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\promise.min.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\test\adapter.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\test\promise.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\example\async.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\example\sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\lib\async.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\lib\caller.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\lib\core.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\lib\node-modules-paths.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\lib\normalize-options.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\lib\sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\core.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\dotdot.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\dotdot\abc\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\dotdot\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\faulty_basedir.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\filter.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\filter_sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\mock.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\mock_sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\module_dir.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\module_dir\xmodules\aaa\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\module_dir\ymodules\aaa\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\module_dir\zmodules\bbb\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\node-modules-paths.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\node_path.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\node_path\x\aaa\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\node_path\x\ccc\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\node_path\y\bbb\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\node_path\y\ccc\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\nonstring.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\pathfilter.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\pathfilter\deep_ref\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\precedence.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\precedence\aaa.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\precedence\aaa\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\precedence\aaa\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\precedence\bbb.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\precedence\bbb\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\baz\doom.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\baz\quux.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\browser_field\a.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\browser_field\b.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\dot_main\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\dot_slash_main\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\foo.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\incorrect_main\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\mug.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\multirepo\packages\package-a\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\multirepo\packages\package-b\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\other_path\lib\other-lib.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\other_path\root.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\quux\foo\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\same_names\foo.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\same_names\foo\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\symlinked\_\node_modules\foo.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\without_basedir\main.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver_sync.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\subdirs.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\symlinks.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-buble\dist\rollup-plugin-buble.cjs.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-buble\dist\rollup-plugin-buble.es.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-node-resolve\dist\rollup-plugin-node-resolve.cjs.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-node-resolve\dist\rollup-plugin-node-resolve.es.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-node-resolve\src\empty.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-node-resolve\src\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-uglify\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\dist\pluginutils.cjs.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\dist\pluginutils.es6.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\src\addExtension.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\src\attachScopes.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\src\createFilter.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\src\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\src\makeLegalIdentifier.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\src\utils\ensureArray.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup\dist\rollup.browser.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup\dist\rollup.es.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup\dist\rollup.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\dist\source-map.debug.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\dist\source-map.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\dist\source-map.min.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\array-set.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\base64-vlq.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\base64.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\binary-search.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\mapping-list.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\quick-sort.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\source-map-consumer.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\source-map-generator.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\source-node.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\lib\util.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\source-map.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\strip-ansi\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\supports-color\index.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\.gitattributes" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\CopyrightNotice.txt" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\LICENSE.txt" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\tslib.es6.html" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\tslib.es6.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\tslib.html" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\tslib.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\.gitmodules" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\CopyrightNotice.txt" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\cancellationToken.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\tsc.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\tsserver.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\tsserverlibrary.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\typescript.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\typescriptServices.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\typingsInstaller.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\watchGuard.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\LICENSE.txt" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\ThirdPartyNoticeText.txt" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\ast.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\compress.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\minify.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\mozilla-ast.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\output.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\parse.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\propmangle.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\scope.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\sourcemap.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\transform.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\lib\utils.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\tools\exit.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\tools\exports.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\tools\node.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\tools\props.html" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\vlq\dist\vlq.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\vlq\src\vlq.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\whatwg-fetch\fetch.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\rollup.config.js" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\src\polyfills.es6" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\tsconfig.json" />
+    <Content Include="Scripts\SGMCustomSignalR.StockTicker.js" />
+    <Content Include="Scripts\SignalR.StockTicker.js" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+    <Content Include="Content\KendoUI\Fiori\variables.scss" />
+    <None Include="Scripts\lib\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\lib\jquery-3.3.1.js" />
+    <Content Include="Scripts\lib\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\lib\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\lib\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\lib\jquery-ui-1.12.1.js" />
+    <Content Include="Scripts\lib\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\lib\jquery.canvasjs.min.js" />
+    <Content Include="Scripts\lib\jquery.blockUI.js" />
+    <Content Include="Scripts\lib\jquery.maskedinput.js" />
+    <Content Include="Scripts\lib\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\lib\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap.min.js" />
+    <Content Include="Content\images\MyIcons\license.pdf" />
+    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans.ttf" />
+    <Content Include="Content\KendoUI\images\kendoui.ttf" />
+    <Content Include="Content\KendoUI\images\kendoui.woff" />
+    <Content Include="Content\KendoUI\kendo.material.min.css.map" />
+    <Content Include="Content\KendoUI\kendo.material.mobile.min.css.map" />
+    <Content Include="fonts\fontello.eot" />
+    <Content Include="fonts\fontello.ttf" />
+    <Content Include="fonts\fontello.woff" />
+    <Content Include="AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\plugins\bootstrap-rtl\bootstrap-rtl.css.map" />
+    <Content Include="Content\plugins\iziToast-master\bower.json" />
+    <Content Include="Content\plugins\iziToast-master\LICENSE" />
+    <Content Include="Content\plugins\iziToast-master\package.json" />
+    <Content Include="Content\plugins\iziToast-master\README.md" />
+    <Content Include="Content\plugins\iziToast-master\src\css\animations.styl" />
+    <Content Include="Content\plugins\iziToast-master\src\css\layouts.styl" />
+    <Content Include="Content\plugins\iziToast-master\src\css\style.styl" />
+    <Content Include="Content\plugins\iziToast-master\src\css\themes.styl" />
+    <Content Include="Content\plugins\iziToast-master\src\css\toast.styl" />
+    <None Include="Properties\PublishProfiles\BACS.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FedePlinski.pubxml" />
+    <Content Include="Scripts\lib\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\lib\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\lib\bootstrap.js.map" />
+    <Content Include="Scripts\lib\bootstrap.min.js.map" />
+    <Content Include="Scripts\cldr\event.js" />
+    <Content Include="Scripts\cldr\supplemental.js" />
+    <Content Include="Scripts\cldr\unresolved.js" />
+    <Content Include="Scripts\Common\Common.js" />
+    <Content Include="Scripts\Common\menu.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.af.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.am-ET.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.am.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-AE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-BH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-DZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-EG.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-IQ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-JO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-KW.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-LB.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-LY.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-MA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-OM.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-QA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-SA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-SY.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-TN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar-YE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ar.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.arn-CL.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.arn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.as-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.as.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.az-Cyrl-AZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.az-Cyrl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.az-Latn-AZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.az-Latn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.az.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ba-RU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ba.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.be-BY.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.be.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bg-BG.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bg.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bn-BD.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bn-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bo-CN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bo.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.br-FR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.br.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bs-Cyrl-BA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bs-Cyrl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bs-Latn-BA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bs-Latn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.bs.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ca-ES.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ca.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.co-FR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.co.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.cs-CZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.cs.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.cy-GB.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.cy.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.da-DK.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.da.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.de-AT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.de-CH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.de-DE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.de-LI.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.de-LU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.de.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.dsb-DE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.dsb.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.dv-MV.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.dv.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.el-GR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.el.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-029.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-AU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-BZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-CA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-GB.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-IE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-JM.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-MY.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-NZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-PH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-SG.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-TT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-US.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-ZA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.en-ZW.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-AR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-BO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-CL.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-CO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-CR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-DO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-EC.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-ES.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-GT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-HN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-MX.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-NI.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-PA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-PE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-PR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-PY.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-SV.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-US.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-UY.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es-VE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.es.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.et-EE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.et.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.eu-ES.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.eu.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fa-IR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fa.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fi-FI.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fi.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fil-PH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fil.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fo-FO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fo.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fr-BE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fr-CA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fr-CH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fr-FR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fr-LU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fr-MC.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fr.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fy-NL.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.fy.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ga-IE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ga.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.gd-GB.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.gd.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.gl-ES.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.gl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.gsw-FR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.gsw.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.gu-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.gu.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ha-Latn-NG.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ha-Latn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ha.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.he-IL.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.he.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hi-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hi.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hr-BA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hr-HR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hr.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hsb-DE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hsb.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hu-HU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hu.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hy-AM.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.hy.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.id-ID.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.id.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ig-NG.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ig.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ii-CN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ii.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.is-IS.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.is.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.it-CH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.it-IT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.it.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.iu-Cans-CA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.iu-Cans.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.iu-Latn-CA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.iu-Latn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.iu.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ja-JP.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ja.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ka-GE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ka.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.kk-KZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.kk.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.kl-GL.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.kl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.km-KH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.km.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.kn-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.kn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ko-KR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ko.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.kok-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.kok.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ky-KG.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ky.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.lb-LU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.lb.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.lo-LA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.lo.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.lt-LT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.lt.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.lv-LV.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.lv.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mi-NZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mi.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mk-MK.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mk.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ml-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ml.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mn-Cyrl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mn-MN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mn-Mong-CN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mn-Mong.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.moh-CA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.moh.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mr-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mr.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ms-BN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ms-MY.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ms.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mt-MT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.mt.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nb-NO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nb.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ne-NP.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ne.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nl-BE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nl-NL.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nn-NO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.no.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nso-ZA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.nso.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.oc-FR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.oc.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.or-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.or.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.pa-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.pa.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.pl-PL.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.pl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.prs-AF.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.prs.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ps-AF.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ps.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.pt-BR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.pt-PT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.pt.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.qut-GT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.qut.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.quz-BO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.quz-EC.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.quz-PE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.quz.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.rm-CH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.rm.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ro-RO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ro.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ru-RU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ru.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.rw-RW.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.rw.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sa-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sa.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sah-RU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sah.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.se-FI.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.se-NO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.se-SE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.se.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.si-LK.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.si.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sk-SK.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sk.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sl-SI.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sma-NO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sma-SE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sma.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.smj-NO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.smj-SE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.smj.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.smn-FI.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.smn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sms-FI.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sms.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sq-AL.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sq.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Cyrl-BA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Cyrl-CS.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Cyrl-ME.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Cyrl-RS.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Cyrl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Latn-BA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Latn-CS.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Latn-ME.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Latn-RS.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr-Latn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sr.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sv-FI.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sv-SE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sv.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sw-KE.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.sw.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.syr-SY.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.syr.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ta-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ta.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.te-IN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.te.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tg-Cyrl-TJ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tg-Cyrl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tg.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.th-TH.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.th.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tk-TM.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tk.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tn-ZA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tr-TR.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tr.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tt-RU.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tt.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tzm-Latn-DZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tzm-Latn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.tzm.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ug-CN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ug.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.uk-UA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.uk.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ur-PK.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.ur.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.uz-Cyrl-UZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.uz-Cyrl.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.uz-Latn-UZ.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.uz-Latn.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.uz.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.vi-VN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.vi.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.wo-SN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.wo.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.xh-ZA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.xh.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.yo-NG.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.yo.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-CHS.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-CHT.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-CN.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-Hans.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-Hant.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-HK.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-MO.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-SG.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh-TW.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zh.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zu-ZA.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.culture.zu.js" />
+    <Content Include="Scripts\globalize\cultures\globalize.cultures.js" />
+    <Content Include="Scripts\globalize\currency.js" />
+    <Content Include="Scripts\globalize\date.js" />
+    <Content Include="Scripts\globalize\globalize.js" />
+    <Content Include="Scripts\globalize\message.js" />
+    <Content Include="Scripts\globalize\notUsed\currency.js" />
+    <Content Include="Scripts\globalize\notUsed\date.js" />
+    <Content Include="Scripts\globalize\notUsed\message.js" />
+    <Content Include="Scripts\globalize\notUsed\number.js" />
+    <Content Include="Scripts\globalize\notUsed\plural.js" />
+    <Content Include="Scripts\globalize\notUsed\relative-time.js" />
+    <Content Include="Scripts\globalize\number.js" />
+    <Content Include="Scripts\globalize\plural.js" />
+    <Content Include="Scripts\globalize\relative-time.js" />
+    <Content Include="Scripts\lib\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\lib\jquery-3.3.1.slim.min.map" />
+    <None Include="Scripts\lib\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\lib\jquery.validate.js" />
+    <Content Include="Scripts\lib\jquery.validate.min.js" />
+    <Content Include="Scripts\lib\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\KendoUI\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="Scripts\KendoUI\cultures\kendo.culture.es.min.js" />
+    <Content Include="Scripts\KendoUI\ExportPDFCustomizing.js" />
+    <Content Include="Scripts\KendoUI\kendo.all.min.js" />
+    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\KendoUI\messages\kendo.messages.es-ES.min.js" />
+    <Content Include="Scripts\lib\bluebird.min.js" />
+    <Content Include="Scripts\ConfirmacionOperaciones.js" />
+    <Content Include="Scripts\CustomDateValidation.js" />
+    <Content Include="Scripts\lib\globalize.js" />
+    <Content Include="Scripts\lib\jszip.min.js" />
+    <Content Include="Scripts\lib\modernizr-2.8.3.js" />
+    <Content Include="Scripts\lib\npm.js" />
+    <Content Include="Scripts\moduloFuncion.js" />
+    <Content Include="Scripts\lib\pako.js" />
+    <Content Include="Scripts\lib\popper-utils.js" />
+    <Content Include="Scripts\lib\popper-utils.min.js" />
+    <Content Include="Scripts\lib\popper.js" />
+    <Content Include="Scripts\lib\popper.min.js" />
+    <Content Include="Scripts\plugins\chartJs\analyser.js" />
+    <Content Include="Scripts\plugins\chartJs\utils.js" />
+    <Content Include="Scripts\plugins\datapicker\bootstrap-datepicker.js" />
+    <Content Include="Scripts\plugins\dataTables\datatables.js" />
+    <Content Include="Scripts\plugins\dataTables\datatables.min.js" />
+    <Content Include="Scripts\plugins\iCheck\icheck.min.js" />
+    <Content Include="Scripts\plugins\metisMenu\metisMenu.min.js" />
+    <Content Include="Scripts\plugins\pace\pace.min.js" />
+    <Content Include="Scripts\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Scripts\plugins\staps\jquery.steps.min.js" />
+    <Content Include="Scripts\plugins\validate\jquery.validate.min.js" />
+    <Content Include="Scripts\rolUsuario.js" />
+    <Content Include="Scripts\SGMCustomFunctions.js" />
+    <Content Include="Scripts\lib\sweetalert2.min.js" />
+    <Content Include="Scripts\lib\moment-with-locales.js" />
+    <Content Include="Scripts\lib\moment-with-locales.min.js" />
+    <Content Include="Scripts\lib\moment.js" />
+    <Content Include="Scripts\lib\moment.min.js" />
+    <Content Include="Scripts\lib\respond.js" />
+    <Content Include="Scripts\lib\respond.min.js" />
+    <Content Include="Scripts\lib\_references.js" />
+    <Content Include="Scripts\plugins\chartJs\Chart.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\FuncionRol\Index.cshtml" />
+    <Content Include="Views\Funcion\Index.cshtml" />
+    <Content Include="Views\Home\_Filtro.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\ModuloFuncion\Index.cshtml" />
+    <Content Include="Views\ModuloFuncion\_Filtro.cshtml" />
+    <Content Include="Views\Modulo\Index.cshtml" />
+    <Content Include="Views\RolUsuario\Index.cshtml" />
+    <Content Include="Views\RolUsuario\_Filtro.cshtml" />
+    <Content Include="Views\Rol\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DecimalNullable.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\Error\Error.cshtml" />
+    <Content Include="Views\Shared\Error\Expired.cshtml" />
+    <Content Include="Views\Shared\Error\NotAuthorized.cshtml" />
+    <Content Include="Views\Shared\Error\NotFound.cshtml" />
+    <Content Include="Views\Shared\Error\PermissionDenied.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Seguridad.config" />
+    <Content Include="Views\Home\_OperacionesALiquidar.cshtml" />
+    <Content Include="Views\Account\PasswordChanged.cshtml" />
+    <Content Include="Views\Movimiento\_Filtro.cshtml" />
+    <Content Include="Views\Movimiento\Index.cshtml" />
+    <Content Include="Views\Extracto\Index.cshtml" />
+    <Content Include="Views\Home\_SaldosMonetaria.cshtml" />
+    <Content Include="Views\CuentasCustodia\Index.cshtml" />
+    <Content Include="Views\EnvioLink\Index.cshtml" />
+    <Content Include="Views\EnvioLink\LinkEnviado.cshtml" />
+    <Content Include="Views\EnvioLink\LinkInvalido.cshtml" />
+    <Content Include="Views\Shared\_TopNavbar.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\_Especies.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\lib\popper-utils.js.map" />
+    <Content Include="Scripts\lib\popper-utils.min.js.map" />
+    <Content Include="Scripts\lib\popper.js.map" />
+    <Content Include="Scripts\lib\popper.min.js.map" />
+    <Content Include="Scripts\lib\README.md" />
+    <Content Include="Views\Inversion\Index.cshtml" />
+    <Content Include="Views\Fondo\Suscripcion.cshtml" />
+    <Content Include="Views\Fondo\Rescate.cshtml" />
+    <Content Include="Views\Fondo\_Mensaje.cshtml" />
+    <Content Include="Views\Fondo\Confirmacion.cshtml" />
+    <Content Include="Views\Home\_Index.cshtml" />
+    <Content Include="Views\Movimiento\_Index.cshtml" />
+    <Content Include="Views\Simulador\Index.cshtml" />
+    <Content Include="Views\Movimiento\_Details.cshtml" />
+    <Content Include="Views\Consumo\_Filtro.cshtml" />
+    <Content Include="Views\Consumo\_Index.cshtml" />
+    <Content Include="Views\Consumo\Index.cshtml" />
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Titulo\Index.cshtml" />
+    <Content Include="Views\Mercado\Index.cshtml" />
+    <Content Include="Views\Mercado\Noticias.cshtml" />
+    <Content Include="Views\Mercado\_HighCharts.cshtml" />
+    <Content Include="Views\Mercado\_TradingView.cshtml" />
+    <Content Include="Views\Mercado\_SignalRStockTicker.cshtml" />
+    <Content Include="Views\Mercado\_Amcharts.cshtml" />
+    <Content Include="Views\Mercado\_TC2000.cshtml" />
+    <Content Include="Views\Mercado\_Yahoo.cshtml" />
+    <Content Include="Views\Inversion\_Fondos.cshtml" />
+    <Content Include="Views\Inversion\_Bonos.cshtml" />
+    <Content Include="Views\Inversion\_Acciones.cshtml" />
+    <Content Include="Views\Usuario\ModificarDatos.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTimeNullable.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\MayorContable\_DetalleCuentaCorriente.cshtml" />
+    <Content Include="Views\MayorContable\_DetalleCuentaCorrienteData.cshtml" />
+    <Content Include="Views\MayorContable\_DetalleCuentaCorrienteFiltros.cshtml" />
+    <Content Include="Views\MayorContable\_DetalleCuentaCorrientePrint.cshtml" />
+    <Content Include="Views\Bono\_Mensaje.cshtml" />
+    <Content Include="Views\Bono\Confirmacion.cshtml" />
+    <Content Include="Views\Bono\Vender.cshtml" />
+    <Content Include="Views\Bono\Comprar.cshtml" />
+    <Content Include="Views\Home\_Disponibilidad.cshtml" />
+    <Content Include="Views\Comprobante\_Details.cshtml" />
+    <Content Include="Views\Comprobante\_Filtro.cshtml" />
+    <Content Include="Views\Comprobante\_Index.cshtml" />
+    <Content Include="Views\Comprobante\Index.cshtml" />
+    <Content Include="Views\Movimiento\_DetailsFondo.cshtml" />
+    <Content Include="Views\Account\PreguntaSeguridadRecuperarPassword.cshtml" />
+    <Content Include="Views\Account\PreguntaSeguridadRegistro.cshtml" />
+    <Content Include="Views\Account\_Dropdown.cshtml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\acorn" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\acorn.cmd" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\buble" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\buble.cmd" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\rollup" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\rollup.cmd" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\tsc" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\tsc.cmd" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\tsserver" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\tsserver.cmd" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\uglifyjs" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\uglifyjs.cmd" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-jsx\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-jsx\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-jsx\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-object-spread\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn-object-spread\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\.editorconfig" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\.npmignore" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\.tern-project" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\.travis.yml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\AUTHORS" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\bin\acorn" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\bin\update_authors.sh" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\dist\.keep" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\acorn\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\ansi-regex\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\ansi-regex\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\ansi-regex\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\ansi-styles\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\ansi-styles\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\ansi-styles\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\balanced-match\.npmignore" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\balanced-match\LICENSE.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\balanced-match\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\balanced-match\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\brace-expansion\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\brace-expansion\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\brace-expansion\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\.travis.yml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\lib\core.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\readme.markdown" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\module_dir\zmodules\bbb\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\pathfilter\deep_ref\node_modules\deep\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\baz\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\biz\node_modules\garply\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\cup.coffee" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\incorrect_main\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\resolver\mug.coffee" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\subdirs\node_modules\a\b\c\x.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\node_modules\resolve\test\subdirs\node_modules\a\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\browser-resolve\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\bin\buble" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\bin\help.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\dist\buble.deps.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\dist\buble.es.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\dist\buble.umd.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\LICENSE.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\buble\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\builtin-modules\builtin-modules.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\builtin-modules\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\builtin-modules\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\builtin-modules\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\chalk\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\chalk\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\chalk\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\commander\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\commander\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\commander\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\commander\Readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\concat-map\.travis.yml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\concat-map\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\concat-map\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\concat-map\README.markdown" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\escape-string-regexp\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\escape-string-regexp\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\escape-string-regexp\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\estree-walker\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\estree-walker\dist\estree-walker.es6.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\estree-walker\dist\estree-walker.umd.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\estree-walker\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\has-ansi\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\has-ansi\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\has-ansi\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\is-module\.npmignore" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\is-module\component.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\is-module\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\is-module\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\dist\magic-string.cjs.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\dist\magic-string.es6.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\dist\magic-string.umd.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\magic-string\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimatch\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimatch\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimatch\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\.travis.yml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\minimist\readme.markdown" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\os-homedir\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\os-homedir\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\os-homedir\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\path-parse\.travis.yml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\path-parse\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\path-parse\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\path-parse\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\.editorconfig" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\.npmignore" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\.travis.yml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\bower.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\promise-polyfill\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\.editorconfig" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\.eslintignore" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\.eslintrc" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\.travis.yml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\appveyor.yml" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\changelog.hbs" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\lib\core.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\readme.markdown" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\.eslintrc" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\module_dir\zmodules\bbb\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\baz\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\browser_field\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\cup.coffee" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\dot_main\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\dot_slash_main\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\incorrect_main\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\invalid_main\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\mug.coffee" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\multirepo\lerna.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\multirepo\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\multirepo\packages\package-a\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\multirepo\packages\package-b\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\resolve\test\resolver\symlinked\_\symlink_target\.gitkeep" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-buble\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-buble\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-buble\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-node-resolve\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-node-resolve\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-node-resolve\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-uglify\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-uglify\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-plugin-uglify\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup-pluginutils\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup\bin\rollup" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup\LICENSE.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\rollup\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\dist\source-map.min.js.map" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\strip-ansi\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\strip-ansi\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\strip-ansi\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\supports-color\license" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\supports-color\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\supports-color\readme.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\.npmignore" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\bower.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\docs\generator.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\.mailmap" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\.parallelperf.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\AUTHORS.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\bin\tsc" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\bin\tsserver" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\CONTRIBUTING.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\cs\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\de\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\es\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\fr\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\it\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\ja\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\ko\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\pl\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\pt-BR\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\ru\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\tr\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\zh-CN\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\zh-TW\diagnosticMessages.generated.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\yarn.lock" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\bin\uglifyjs" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\uglify-js\tools\domprops.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\vlq\CHANGELOG.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\vlq\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\vlq\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\vlq\README.md" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\whatwg-fetch\LICENSE" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\whatwg-fetch\package.json" />
+    <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\whatwg-fetch\README.md" />
+    <Content Include="Views\Account\CambiarPassword.cshtml" />
+    <Content Include="Views\Accion\_Mensaje.cshtml" />
+    <Content Include="Views\Accion\Comprar.cshtml" />
+    <Content Include="Views\Accion\Confirmacion.cshtml" />
+    <Content Include="Views\Accion\Vender.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\PreguntasSeguridad\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eDrago.BLL\eDrago.BLL.csproj">
+      <Project>{7ecd1a49-2ada-47d3-b1b0-006acdc4ce27}</Project>
+      <Name>eDrago.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eDrago.DAL\eDrago.DAL.csproj">
+      <Project>{622abcc6-6232-4ee7-af7a-5a5155078d2d}</Project>
+      <Name>eDrago.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eDrago.Resources\eDrago.Resources.csproj">
+      <Project>{83b90c9d-3190-4053-97fc-7f6bc31a3e9f}</Project>
+      <Name>eDrago.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\plugins\iziToast-master\dist\izitoast\izitoast.d.ts" />
+    <TypeScriptCompile Include="Content\plugins\iziToast-master\types\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\lib\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\charting_library\charting_library.min.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\charting_library\datafeed-api.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\commander\typings\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\source-map\source-map.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\tslib\tslib.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.dom.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.dom.iterable.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.collection.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.core.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.generator.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.iterable.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.promise.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.proxy.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.reflect.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.symbol.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2015.symbol.wellknown.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2016.array.include.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2016.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2016.full.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2017.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2017.full.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2017.intl.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2017.object.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2017.sharedmemory.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2017.string.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2017.typedarrays.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2018.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es2018.full.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es5.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.es6.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.esnext.array.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.esnext.asynciterable.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.esnext.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.esnext.full.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.esnext.promise.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.scripthost.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\lib.webworker.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\protocol.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\tsserverlibrary.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\typescript.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\typescript\lib\typescriptServices.d.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\data-pulse-provider.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\helpers.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\history-provider.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\iquotes-provider.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\quotes-provider.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\quotes-pulse-provider.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\requester.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\symbols-storage.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\udf-compatible-datafeed-base.ts" />
+    <TypeScriptCompile Include="Scripts\plugins\tradingView\datafeeds\udf\src\udf-compatible-datafeed.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13392</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13392/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

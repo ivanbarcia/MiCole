@@ -1,0 +1,10 @@
+﻿@model DateTime
+
+<script type="text/javascript">
+    $(function () {
+        $(".date").datepicker();
+        //$(".date").mask("99/99/9999");
+    });
+</script>
+
+@Html.TextBox("", Model.ToString("d"), new { @class = "date fecha form-control" })

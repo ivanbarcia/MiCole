@@ -1,0 +1,24 @@
+﻿@model DateTime?
+
+<script type="text/javascript">
+    $(function () {
+        $(".date").datepicker();
+        //$(".date").mask("99/99/9999");
+    });
+</script>
+
+@if (Model.HasValue)
+{
+    @if (Model.Value.Date == new DateTime(1900, 1, 1))
+    {
+        @Html.TextBox("", "")
+    }
+    else
+    {
+        @Html.TextBox("", Model.Value.ToString("d"), new { @class = "date fecha form-control" })
+    }
+}
+else
+{
+    @Html.TextBox("", "")
+}
