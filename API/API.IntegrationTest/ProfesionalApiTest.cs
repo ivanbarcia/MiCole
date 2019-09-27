@@ -14,6 +14,20 @@ namespace SGMApi.IntegrationTest
     public class ProfesionalApiTest : TestFixture
     {
         [Test]
+        public async Task GetAllProfesional()
+        {
+            // Act
+            var response = await _client.GetAsync("api/Profesional/GetAll");
+
+            // Arrange
+            response.EnsureSuccessStatusCode();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+
+            var result = await response.Content.ReadAsStringAsync();
+            var json = JsonConvert.DeserializeObject<List<Profesional>>(result);
+        }
+
+        [Test]
         public async Task AddProfesional()
         {
             // Act

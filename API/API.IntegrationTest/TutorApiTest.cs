@@ -14,6 +14,20 @@ namespace SGMApi.IntegrationTest
     public class TutorApiTest : TestFixture
     {
         [Test]
+        public async Task GetAllTutores()
+        {
+            // Act
+            var response = await _client.GetAsync("api/Tutor/GetAll");
+
+            // Arrange
+            response.EnsureSuccessStatusCode();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+
+            var result = await response.Content.ReadAsStringAsync();
+            var json = JsonConvert.DeserializeObject<List<Tutor>>(result);
+        }
+
+        [Test]
         public async Task AddTutor()
         {
             // Act

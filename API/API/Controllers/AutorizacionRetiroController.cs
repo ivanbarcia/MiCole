@@ -27,6 +27,29 @@ namespace API.Controllers
         }
 
         /// <summary>
+        /// Obtengo todas las autorizacion de retiro
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /GetAll
+        ///     {
+        ///     }
+        /// </remarks>
+        [HttpGet]
+        [Route("GetAll")]
+        [ETagFilter(200)]
+        [ProducesResponseType(typeof(IEnumerable<AutorizacionRetiro>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = _context.AutorizacionRetiro.AsEnumerable();
+
+            return new ObjectResult(result);
+        }
+
+        /// <summary>
         /// Doy de alta una AutorizacionRetiro
         /// </summary>
         /// <remarks>

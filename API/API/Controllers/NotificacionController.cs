@@ -27,6 +27,29 @@ namespace API.Controllers
         }
 
         /// <summary>
+        /// Obtengo todas las notificaciones
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /GetAll
+        ///     {
+        ///     }
+        /// </remarks>
+        [HttpGet]
+        [Route("GetAll")]
+        [ETagFilter(200)]
+        [ProducesResponseType(typeof(IEnumerable<Notificacion>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = _context.Notificacion.AsEnumerable();
+
+            return new ObjectResult(result);
+        }
+
+        /// <summary>
         /// Envia mensaje a destinatario
         /// </summary>
         /// <remarks>

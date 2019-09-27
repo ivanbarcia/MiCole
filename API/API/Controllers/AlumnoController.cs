@@ -27,6 +27,29 @@ namespace API.Controllers
         }
 
         /// <summary>
+        /// Obtengo todos los alumnos
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /GetAll
+        ///     {
+        ///     }
+        /// </remarks>
+        [HttpGet]
+        [Route("GetAll")]
+        [ETagFilter(200)]
+        [ProducesResponseType(typeof(IEnumerable<Alumno>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = _context.Alumno.AsEnumerable();
+
+            return new ObjectResult(result);
+        }
+
+        /// <summary>
         /// Doy de alta un alumno
         /// </summary>
         /// <remarks>
@@ -176,29 +199,6 @@ namespace API.Controllers
             }
 
             var result = _context.Alumno.Find(Id);
-
-            return new ObjectResult(result);
-        }
-
-        /// <summary>
-        /// Obtengo todos los alumnos
-        /// </summary>
-        /// <remarks>
-        /// Sample request:
-        ///
-        ///     GET /GetAll
-        ///     {
-        ///     }
-        /// </remarks>
-        [HttpGet]
-        [Route("GetAll")]
-        [ETagFilter(200)]
-        [ProducesResponseType(typeof(IEnumerable<Alumno>), (int)HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
-        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
-        public async Task<IActionResult> GetAll()
-        {
-            var result = _context.Alumno.AsEnumerable();
 
             return new ObjectResult(result);
         }

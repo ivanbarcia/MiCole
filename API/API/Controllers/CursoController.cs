@@ -27,6 +27,29 @@ namespace API.Controllers
         }
 
         /// <summary>
+        /// Obtengo todos los cursos
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /GetAll
+        ///     {
+        ///     }
+        /// </remarks>
+        [HttpGet]
+        [Route("GetAll")]
+        [ETagFilter(200)]
+        [ProducesResponseType(typeof(IEnumerable<Curso>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = _context.Curso.AsEnumerable();
+
+            return new ObjectResult(result);
+        }
+
+        /// <summary>
         /// Doy de alta un Curso
         /// </summary>
         /// <remarks>

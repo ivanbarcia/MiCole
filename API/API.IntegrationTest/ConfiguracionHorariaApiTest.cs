@@ -14,6 +14,20 @@ namespace SGMApi.IntegrationTest
     public class ConfiguracionHorariaApiTest : TestFixture
     {
         [Test]
+        public async Task GetAllConfiguracionHoraria()
+        {
+            // Act
+            var response = await _client.GetAsync("api/ConfiguracionHoraria/GetAll");
+
+            // Arrange
+            response.EnsureSuccessStatusCode();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+
+            var result = await response.Content.ReadAsStringAsync();
+            var json = JsonConvert.DeserializeObject<List<ConfiguracionHoraria>>(result);
+        }
+
+        [Test]
         public async Task AddConfiguracionHoraria()
         {
             // Act

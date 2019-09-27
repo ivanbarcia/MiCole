@@ -27,6 +27,29 @@ namespace API.Controllers
         }
 
         /// <summary>
+        /// Obtengo todos los tutores
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /GetAll
+        ///     {
+        ///     }
+        /// </remarks>
+        [HttpGet]
+        [Route("GetAll")]
+        [ETagFilter(200)]
+        [ProducesResponseType(typeof(IEnumerable<Tutor>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = _context.Tutor.AsEnumerable();
+
+            return new ObjectResult(result);
+        }
+
+        /// <summary>
         /// Doy de alta un Tutor
         /// </summary>
         /// <remarks>

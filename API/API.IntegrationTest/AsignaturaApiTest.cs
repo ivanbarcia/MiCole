@@ -14,6 +14,20 @@ namespace SGMApi.IntegrationTest
     public class AsignaturaApiTest : TestFixture
     {
         [Test]
+        public async Task GetAllAsignaturas()
+        {
+            // Act
+            var response = await _client.GetAsync("api/ASignatura/GetAll");
+
+            // Arrange
+            response.EnsureSuccessStatusCode();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+
+            var result = await response.Content.ReadAsStringAsync();
+            var json = JsonConvert.DeserializeObject<List<Asignatura>>(result);
+        }
+
+        [Test]
         public async Task AddAsignatura()
         {
             // Act

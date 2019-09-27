@@ -14,6 +14,20 @@ namespace SGMApi.IntegrationTest
     public class NotificacionApiTest : TestFixture
     {
         [Test]
+        public async Task GetAllNotificaciones()
+        {
+            // Act
+            var response = await _client.GetAsync("api/Notificacion/GetAll");
+
+            // Arrange
+            response.EnsureSuccessStatusCode();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+
+            var result = await response.Content.ReadAsStringAsync();
+            var json = JsonConvert.DeserializeObject<List<Notificacion>>(result);
+        }
+
+        [Test]
         public async Task SendMessage()
         {
             // Act

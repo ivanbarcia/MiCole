@@ -14,6 +14,20 @@ namespace SGMApi.IntegrationTest
     public class AutorizacionApiTest : TestFixture
     {
         [Test]
+        public async Task GetAllAutorizacion()
+        {
+            // Act
+            var response = await _client.GetAsync("api/Autorizacion/GetAll");
+
+            // Arrange
+            response.EnsureSuccessStatusCode();
+            Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+
+            var result = await response.Content.ReadAsStringAsync();
+            var json = JsonConvert.DeserializeObject<List<Autorizacion>>(result);
+        }
+
+        [Test]
         public async Task AddAutorizacion()
         {
             // Act
