@@ -1,0 +1,77 @@
+﻿@using Web.Resources
+
+<header class="navbar navbar-default navbar-grid navbar-fixed-top">
+
+    <div id="logo" class="float-left" style="width: auto; padding: 14px 35px 14px 30px">
+        <a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Images/logo_fondoAzul.jpg")" alt="SGMTrade" @*width="auto" height="35px"*@ /></a>
+    </div>
+    <div id="cssmenu" class="float-left" style="padding: 23px 0px 14px 0px">
+        <ul class="nav navbar-top-links">
+            <li class='active has-sub'>
+                <a href='#'>@Global.Portfolio</a>
+                <ul>
+                    <li>@Html.ActionLink("Posiciones", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Detalle de Movimientos", "Index", "Movimiento")</li>
+                    <li>@Html.ActionLink("Extracto", "Index", "Extracto")</li>
+                    @*<li>@Html.ActionLink("Calendario de pagos", "Index", "Consumo")</li>*@
+                    <li>@Html.ActionLink("Comprobantes", "Index", "Comprobante")</li>
+                </ul>
+            </li>
+            <li class='active has-sub'>
+                <a href='#'>Inversiones</a>
+                <ul>
+                    <li>@Html.ActionLink("Opciones de Inversiones", "Index", "Inversion")</li>
+                    @*<li>@Html.ActionLink("Cotizaciones Titulo", "Index", "Titulo")</li>
+                        <li>@Html.ActionLink("Simulador", "Index", "Simulador")</li>*@
+                </ul>
+            </li>
+            @*<li class='active has-sub'>
+                    <a href='#'>Datos de Mercado</a>
+                    <ul>
+                        <li>@Html.ActionLink("Estadisticas", "Index", "Mercado")</li>
+                        <li>@Html.ActionLink("Noticias", "Noticias", "Mercado")</li>
+                    </ul>
+                </li>*@
+
+            @*<li class="active" style="width: 300px; padding: 8px 20px 0 10px; margin-left: 80px; font-family: OpenSans; font-style: italic;">
+                    <input style="border-radius:3pt" type="text" placeholder="@Global.Buscar" class="form-control" name="top-search" id="top-search">
+                </li>*@
+            <li class="active">
+                <div id="search" class="float-left" style="width: auto; padding: 10px 0 0 0;">
+                    @*   <a href="@Url.Action("Index", "Home")"><img src="@Url.Content("~/Images/search.png")" alt="SGM" /></a>*@
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <div class="float-right">
+        <section id="logout">
+            @Html.Partial("_LoginPartial")
+        </section>
+    </div>
+
+</header>
+
+<div style="margin-top: 90px;">
+    @{ Html.RenderPartial("~/Views/Mercado/_SignalRStockTicker.cshtml"); }
+</div>
+
+<style>
+    .navbar-fixed-top, .navbar-static-top {
+        background: rgb(0, 82, 151);
+    }
+
+    .nav > li.active {
+        background: rgb(0, 82, 151);
+        padding: 0 15px 0 15px !important;
+    }
+
+    #logout a {
+        color: #fff;
+    }
+
+    .navbar-default .nav > li > a:focus, .navbar-default .nav > li > a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff
+    }
+</style>
