@@ -42,23 +42,11 @@ namespace Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/lib/bootstrap.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
-                "~/Scripts/KendoUI/kendo.all.min.js",
-                "~/Scripts/KendoUI/kendo.aspnetmvc.min.js",
-                "~/Scripts/KendoUI/messages/kendo.messages.es-ES.min.js",
-                "~/Scripts/KendoUI/cultures/kendo.culture.es-AR.min.js"));
-
             bundles.Add(new ScriptBundle("~/plugins/iziToast-master/js").Include(
                 "~/Content/plugins/iziToast-master/dist/js/iziToast.min.js"));
 
             bundles.Add(new StyleBundle("~/plugins/iziToast-master/css").Include(
                       "~/Content/plugins/iziToast-master/dist/css/iziToast.min.css"));
-
-            bundles.Add(new StyleBundle("~/Content/kendo").Include(
-                            "~/Content/KendoUI/kendo.common.min.css",
-                            //"~/Content/KendoUI/kendo.material.min.css"
-                            "~/Content/KendoUI/fiori/fiori.css"
-                                ));
 
             bundles.Add(new ScriptBundle("~/bundles/signalR").Include(
                 "~/Scripts/lib/jquery.signalR-{version}.min.js"));

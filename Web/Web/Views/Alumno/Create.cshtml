@@ -1,0 +1,87 @@
+﻿@using Web.Resources
+@model Web.DAL.Models.Alumno
+
+@* PERMITE QUE LA LISTA DE AUTOCOMPLETE ESTE EN EL MODAL Y NO "ATRAS" *@
+<style>
+    .ui-autocomplete {
+        z-index: 215000000 !important;
+    }
+</style>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="myModalLabel">@Global.Agregar</h4>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="modal-body">
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Nombre)
+                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Apellido)
+                    @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NroDocumento, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.NroDocumento)
+                    @Html.ValidationMessageFor(model => model.NroDocumento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Domicilio, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Domicilio)
+                    @Html.ValidationMessageFor(model => model.Domicilio, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Telefono)
+                    @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Mail, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Mail)
+                    @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FechaNacimiento, htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.FechaNacimiento)
+                    @Html.ValidationMessageFor(model => model.FechaNacimiento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">@Global.Cancelar</button>
+        <input class="btn btn-primary" type="submit" value="@Global.Agregar" />
+    </div>
+}

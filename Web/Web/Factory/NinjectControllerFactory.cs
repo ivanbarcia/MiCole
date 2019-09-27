@@ -3,6 +3,8 @@ using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject;
+using Web.BLL.Business;
+using Web.BLL.Interfaces;
 using Web.DAL.Context;
 
 namespace Web.Factory
@@ -27,6 +29,7 @@ namespace Web.Factory
         private void AddBindings()
         {
             _ninjectKernel.Bind<DbContext>().To<DataContext>();
+            _ninjectKernel.Bind<IAlumnoBusiness>().To<AlumnoBusiness>();
         }
     }
 }

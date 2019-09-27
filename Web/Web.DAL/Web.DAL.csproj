@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClosedXML">
-      <HintPath>..\..\..\ClosedXML.dll</HintPath>
-    </Reference>
     <Reference Include="DocumentFormat.OpenXml">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
@@ -56,29 +53,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\DataContext.cs" />
+    <Compile Include="Models\Alumno.cs" />
     <Compile Include="Models\AuditableEntity.cs" />
-    <Compile Include="Models\ClienteLogin.cs" />
-    <Compile Include="Models\DataPoint.cs" />
-    <Compile Include="Models\Entidad.cs" />
     <Compile Include="Models\Entity.cs" />
-    <Compile Include="Models\Especie.cs" />
-    <Compile Include="Models\Funcion.cs" />
-    <Compile Include="Models\FuncionRol.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LogMovimiento.cs" />
-    <Compile Include="Models\MenuModulo.cs" />
-    <Compile Include="Models\ModoDeLiquidacion.cs" />
-    <Compile Include="Models\Modulo.cs" />
-    <Compile Include="Models\ModuloFuncion.cs" />
-    <Compile Include="Models\Operador.cs" />
-    <Compile Include="Models\Reporte.cs" />
-    <Compile Include="Models\Rol.cs" />
-    <Compile Include="Models\RolUsuario.cs" />
-    <Compile Include="Models\Preguntas.cs" />
-    <Compile Include="Models\TVBarHistory.cs" />
-    <Compile Include="Models\TVConfig.cs" />
-    <Compile Include="Models\TVGroup.cs" />
-    <Compile Include="Models\TVSymbolInfo.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

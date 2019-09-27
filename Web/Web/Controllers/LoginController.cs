@@ -1,9 +1,9 @@
-﻿using Web.BLL.Business;
-using Web.BLL.Interfaces;
-using Web.DAL.Models;
+﻿using Web.DAL.Models;
 using Web.Resources;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.DirectoryServices.AccountManagement;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,83 +14,168 @@ namespace Web.Controllers
     [HandleError]
     public class LoginController : BaseController
     {
-        public readonly ILoginBusiness _loginBusiness;
-
-        public LoginController(/*ILoginBusiness loginBusiness*/)
-        {
-            _loginBusiness = new LoginBusiness();//loginBusiness;
-        }
-
         [AllowAnonymous]
         public ActionResult Login()
         {
+            return RedirectToAction("Index", "Alumno");
+
+            var firstLoggingCookie = Request.Cookies["FirstLogin"];
+
+            if (firstLoggingCookie != null)
+            {
+                var expiredCookie = Request.Cookies[".ADAuthCookie"];
+
+                if (expiredCookie == null)
+                {
+                    ModelState.AddModelError("", Global.Error_ExpiredMessage);
+                }
+            }
+
             return View();
         }
 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login([Bind(Include = "UserName,Password")] Login model, string returnUrl)
+        public ActionResult Login(Login model, string returnUrl)
         {
-            if (ModelState.IsValid)
+            var authenticationMode = 0;
+            Session["Usuario"] = model.UserName;
+            try
             {
-                var login = _loginBusiness.Login(model);
-
-                if (login != null)
-                {
-                    if (!checkSesionActiva(login.Usuario))
-                    {
-                        ModelState.AddModelError(string.Empty, Global.ErrorSesionesActivas);
-                        return View(model);
-                    }
-
-                    SetAuthenticationData(login);
-
-                    // Log
-                    //_seguridadBusiness.GetPortalLog(cliente.Usuario, 3);
-
-                    if (login.RenovarClave == 1)
-                    {
-                        // El cliente tiene su contraseña vencida
-                        return RedirectToAction("ChangePassword", "Account", new { id = 1, cuit = login.Usuario });
-                    }
-
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "Usuario o Contraseña incorrecta");
-
-                    if (Session["IntentosFallidos"] == null)
-                    {
-                        Session["IntentosFallidos"] = 0;
-                    }
-
-                    if ((int)Session["IntentosFallidos"] != 2)
-                    {
-                        Session["IntentosFallidos"] = (int)Session["IntentosFallidos"] + 1;
-                    }
-                }
+                authenticationMode = Convert.ToInt32(ConfigurationManager.AppSettings["AuthenticationMode"]);
+            }
+            catch
+            {
+                authenticationMode = 0;
             }
 
-            return View(model);
-        }
+            var cookie = new HttpCookie("FirstLogin");
+            Response.Cookies.Add(cookie);
 
-        private void SetAuthenticationData(ClienteLogin user)
-        {
-            //CustomPrincipalSerializeModel serializeModel = new CustomPrincipalSerializeModel();
-            //serializeModel.Id = user.Id;
-            //serializeModel.ClieAlias = user.clie_alias;
-            ////serializeModel.Cuenta = user.Cuenta;
-            //serializeModel.FirstName = user.Usuario.Trim();
-            //serializeModel.LastName = user.NombreAfip.Trim();
-            //serializeModel.Email = user.Email;
+            //switch (authenticationMode)
+            //{
+            //    case 0:
+            //        // LOGIN DEFAULT
+            //        if (ModelState.IsValid)
+            //        {
+            //            if (UnitOfWork.Usuario.Any(x => x.NombreUsuario == model.UserName))
+            //            {
+            //                if (UnitOfWork.Usuario.GetByName(model.UserName).Estado == (int)States.Inactive)
+            //                {
+            //                    ModelState.AddModelError(string.Empty, Global.Login_InactiveUser);
+            //                    break;
+            //                }
 
-            //JavaScriptSerializer serializer = new JavaScriptSerializer();
+            //                var passwordEncrypted = UnitOfWork.Usuario.Md5Encryption(model.Password);
+            //                var currentPassword = UnitOfWork.Usuario.GetByName(model.UserName).Contraseña;
 
-            //string userData = serializer.Serialize(serializeModel);
+            //                if (passwordEncrypted != currentPassword)
+            //                {
+            //                    ModelState.AddModelError(string.Empty, Global.Login_InvalidUser);
+            //                    break;
+            //                }
 
-            //FormsAuthentication.SetAuthCookie(userData, false);
+            //                FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+
+            //                return RedirectToAction("Index", "Home");
+            //            }
+
+            //            ModelState.AddModelError(string.Empty, Global.Login_InvalidUser);
+            //        }
+            //        break;
+
+            //    case 1:
+            //        return RedirectToAction("Index", "Home");
+
+            //    case 2:
+            //        // ACTIVE DIRECTORY
+            //        if (!this.ModelState.IsValid)
+            //        {
+            //            return this.View(model);
+            //        }
+
+            //        try
+            //        {
+            //            GetADUser(model);
+
+            //            FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+
+            //            if (this.Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+            //                && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+            //            {
+            //                return this.Redirect(returnUrl);
+            //            }
+
+            //            return this.RedirectToAction("Index", "Home");
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            this.ModelState.AddModelError(string.Empty, ex.Message);
+
+            //            return View(model);
+            //        }
+
+            //        this.ModelState.AddModelError(string.Empty, Global.Login_InvalidUser);
+
+            //        return View(model);
+
+            //    case 3:
+            //        // LDAP
+            //        if (!this.ModelState.IsValid)
+            //        {
+            //            return this.View(model);
+            //        }
+
+            //        if (Membership.ValidateUser(model.UserName, model.Password))
+            //        {
+            //            GetADUser(model);
+
+            //            FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+
+            //            if (this.Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+            //                && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+            //            {
+            //                return this.Redirect(returnUrl);
+            //            }
+
+            //            return this.RedirectToAction("Index", "Home");
+            //        }
+
+            //        this.ModelState.AddModelError(string.Empty, Global.Login_InvalidUser);
+
+            //        return View(model);
+
+            //    default:
+            //        // LOGIN DEFAULT
+            //        if (ModelState.IsValid)
+            //        {
+            //            if (UnitOfWork.Usuario.Any(x => x.NombreUsuario == model.UserName))
+            //            {
+            //                if (UnitOfWork.Usuario.GetByName(model.UserName).Estado == (int)States.Inactive)
+            //                {
+            //                    ModelState.AddModelError(string.Empty, Global.Login_InactiveUser);
+            //                    break;
+            //                }
+            //                var passwordEncrypted = UnitOfWork.Usuario.Md5Encryption(model.Password);
+            //                var currentPassword = UnitOfWork.Usuario.GetByName(model.UserName).Contraseña;
+            //                if (passwordEncrypted != currentPassword)
+            //                {
+            //                    ModelState.AddModelError(string.Empty, Global.Login_InvalidUser);
+            //                    break;
+            //                }
+
+            //                FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+            //                return RedirectToAction("Index", "Home");
+            //            }
+
+            //            ModelState.AddModelError(string.Empty, Global.Login_InvalidUser);
+            //        }
+            //        break;
+
+            //}
+
+            return this.View(model);
         }
 
         public ActionResult Logout()
@@ -101,43 +186,15 @@ namespace Web.Controllers
             var cookie1 = new HttpCookie(FormsAuthentication.FormsCookieName, "") { Expires = DateTime.Now.AddYears(-1) };
             Response.Cookies.Add(cookie1);
 
-            var cookie2 = new HttpCookie("SessionId", "") { Expires = DateTime.Now.AddYears(-1) };
+            var cookie2 = new HttpCookie("ASP.NET_SessionId", "") { Expires = DateTime.Now.AddYears(-1) };
             Response.Cookies.Add(cookie2);
 
-            var cookie3 = new HttpCookie("JWT", "") { Expires = DateTime.Now.AddYears(-1) };
+            var cookie3 = new HttpCookie("FirstLogin", "") { Expires = DateTime.Now.AddYears(-1) };
             Response.Cookies.Add(cookie3);
-
-            var cookie4 = new HttpCookie("Token", "") { Expires = DateTime.Now.AddYears(-1) };
-            Response.Cookies.Add(cookie4);
-
-            var cookie5 = new HttpCookie("Refresh_Token", "") { Expires = DateTime.Now.AddYears(-1) };
-            Response.Cookies.Add(cookie5);
 
             FormsAuthentication.RedirectToLoginPage();
 
             return RedirectToAction("Login", "Login");
-        }
-
-        protected bool checkSesionActiva(string userName)
-        {
-            System.Collections.Generic.List<string> d = HttpContext.Application["UsersLoggedIn"] as System.Collections.Generic.List<string>;
-            if (d != null)
-            {
-                lock (d)
-                {
-                    if (d.Contains(userName))
-                    {
-                        int cant = d.Count(s => userName.Contains(s));
-                        if (Convert.ToInt32(ConfigurationManager.AppSettings["CantidadIntentosFallidos"]) <= cant)
-                        {
-                            return false;
-                        }
-                    }
-                    d.Add(userName);
-                }
-            }
-            Session["UserLoggedIn"] = userName;
-            return true;
         }
     }
 }

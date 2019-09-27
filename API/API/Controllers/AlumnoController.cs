@@ -179,5 +179,28 @@ namespace API.Controllers
 
             return new ObjectResult(result);
         }
+
+        /// <summary>
+        /// Obtengo todos los alumnos
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     GET /GetAll
+        ///     {
+        ///     }
+        /// </remarks>
+        [HttpGet]
+        [Route("GetAll")]
+        [ETagFilter(200)]
+        [ProducesResponseType(typeof(IEnumerable<Alumno>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorDetails), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = _context.Alumno.AsEnumerable();
+
+            return new ObjectResult(result);
+        }
     }
 }

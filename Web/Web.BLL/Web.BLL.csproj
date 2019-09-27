@@ -65,10 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\SeguridadBusiness.cs" />
-    <Compile Include="Business\LoginBusiness.cs" />
-    <Compile Include="Interfaces\ISeguridadBusiness.cs" />
-    <Compile Include="Interfaces\ILoginBusiness.cs" />
+    <Compile Include="Business\GenericBusiness.cs" />
+    <Compile Include="Business\AlumnoBusiness.cs" />
+    <Compile Include="Interfaces\IGenericBusiness.cs" />
+    <Compile Include="Interfaces\IAlumnoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

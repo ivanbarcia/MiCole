@@ -2,7 +2,7 @@
 @using Web.Filters
 
 @{
-    var nombreUsuario = ((User as CustomPrincipal) == null ? "" : (User as CustomPrincipal).LastName);
+    //var nombreUsuario = ((User as CustomPrincipal) == null ? "" : (User as CustomPrincipal).LastName);
     var fecha = DateTime.Today.Day + "/" + DateTime.Today.Month + "/" + DateTime.Today.Year;
 }
 <div style="width: auto; padding: 23px 30px 14px 0;">
@@ -19,7 +19,7 @@
         <div style="padding-top: 6px;">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                 <span class="clear">
-                    <span class="text-white text-xs block"><span class="glyphicon glyphicon-user" style="font-size:16px"></span>&nbsp;&nbsp;&nbsp;<strong>@nombreUsuario</strong><b class="caret"></b></span>
+                    <span class="text-white text-xs block"><span class="glyphicon glyphicon-user" style="font-size:16px"></span>&nbsp;&nbsp;&nbsp;<strong>@*@nombreUsuario*@</strong><b class="caret"></b></span>
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Fecha: @fecha
                 </span>
             </a>

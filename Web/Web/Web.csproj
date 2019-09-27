@@ -49,11 +49,12 @@
     <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
     </Reference>
-    <Reference Include="ClosedXML">
-      <HintPath>..\..\..\Repositories\Web\ClosedXML.dll</HintPath>
-    </Reference>
     <Reference Include="DocumentFormat.OpenXml">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="eDrago, Version=1.0.7202.21815, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\eDrago.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -219,23 +220,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\FontAwesomeBundleConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Extensions\AutoMapperHelper.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Factory\NinjectControllerFactory.cs" />
+    <Compile Include="Filters\AuthorizeADAttribute.cs" />
     <Compile Include="Filters\RedirectOnErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CultureHelper.cs" />
+    <Compile Include="Helpers\HtmlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\UserIdentity.cs" />
     <Compile Include="Startup.cs" />
@@ -282,79 +289,6 @@
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\jquery-ui-1.10.4.custom.css" />
     <Content Include="Content\jquery-ui-1.10.4.custom.min.css" />
-    <Content Include="Content\KendoUI\Default\editor.png" />
-    <Content Include="Content\KendoUI\Default\imagebrowser.png" />
-    <Content Include="Content\KendoUI\Default\indeterminate.gif" />
-    <Content Include="Content\KendoUI\Default\loading-image.gif" />
-    <Content Include="Content\KendoUI\Default\loading.gif" />
-    <Content Include="Content\KendoUI\Default\loading_2x.gif" />
-    <Content Include="Content\KendoUI\Default\markers.png" />
-    <Content Include="Content\KendoUI\Default\markers_2x.png" />
-    <Content Include="Content\KendoUI\Default\slider-h.gif" />
-    <Content Include="Content\KendoUI\Default\slider-v.gif" />
-    <Content Include="Content\KendoUI\Default\sprite.png" />
-    <Content Include="Content\KendoUI\Default\sprite_2x.png" />
-    <Content Include="Content\KendoUI\Default\sprite_kpi.png" />
-    <Content Include="Content\KendoUI\Default\sprite_kpi_2x.png" />
-    <Content Include="Content\KendoUI\Fiori\fiori.css" />
-    <Content Include="Content\KendoUI\images\back.png" />
-    <Content Include="Content\KendoUI\images\kendoui.svg" />
-    <Content Include="Content\KendoUI\images\wp8_icons.png" />
-    <Content Include="Content\KendoUI\images\wp8_inverseicons.png" />
-    <Content Include="Content\KendoUI\kendo.common.min - copia.css" />
-    <Content Include="Content\KendoUI\kendo.common.min.css" />
-    <Content Include="Content\KendoUI\kendo.default.min.css" />
-    <Content Include="Content\KendoUI\kendo.material.min - copia.css" />
-    <Content Include="Content\KendoUI\kendo.material.min.css" />
-    <Content Include="Content\KendoUI\kendo.material.mobile.min.css" />
-    <Content Include="Content\KendoUI\Material\editor.png" />
-    <Content Include="Content\KendoUI\Material\imagebrowser.png" />
-    <Content Include="Content\KendoUI\Material\indeterminate.gif" />
-    <Content Include="Content\KendoUI\Material\loading-image.gif" />
-    <Content Include="Content\KendoUI\Material\loading.gif" />
-    <Content Include="Content\KendoUI\Material\loading_2x.gif" />
-    <Content Include="Content\KendoUI\Material\markers.png" />
-    <Content Include="Content\KendoUI\Material\markers_2x.png" />
-    <Content Include="Content\KendoUI\Material\slider-h.gif" />
-    <Content Include="Content\KendoUI\Material\slider-v.gif" />
-    <Content Include="Content\KendoUI\Material\sprite.png" />
-    <Content Include="Content\KendoUI\Material\sprite_2x.png" />
-    <Content Include="Content\KendoUI\Material\sprite_kpi.png" />
-    <Content Include="Content\KendoUI\Material\sprite_kpi_2x.png" />
-    <Content Include="Content\KendoUI\Material\_sprite.png" />
-    <Content Include="Content\KendoUI\Material\_sprite_2x.png" />
-    <Content Include="Content\KendoUI\Material\__sprite.png" />
-    <Content Include="Content\KendoUI\Material\__sprite_2x.png" />
-    <Content Include="Content\KendoUI\textures\brushed-metal.png" />
-    <Content Include="Content\KendoUI\textures\dots1.png" />
-    <Content Include="Content\KendoUI\textures\dots10.png" />
-    <Content Include="Content\KendoUI\textures\dots11.png" />
-    <Content Include="Content\KendoUI\textures\dots12.png" />
-    <Content Include="Content\KendoUI\textures\dots13.png" />
-    <Content Include="Content\KendoUI\textures\dots2.png" />
-    <Content Include="Content\KendoUI\textures\dots3.png" />
-    <Content Include="Content\KendoUI\textures\dots4.png" />
-    <Content Include="Content\KendoUI\textures\dots5.png" />
-    <Content Include="Content\KendoUI\textures\dots6.png" />
-    <Content Include="Content\KendoUI\textures\dots7.png" />
-    <Content Include="Content\KendoUI\textures\dots8.png" />
-    <Content Include="Content\KendoUI\textures\dots9.png" />
-    <Content Include="Content\KendoUI\textures\glass-lighter.png" />
-    <Content Include="Content\KendoUI\textures\glass.png" />
-    <Content Include="Content\KendoUI\textures\highlight.png" />
-    <Content Include="Content\KendoUI\textures\hsv-gradient.png" />
-    <Content Include="Content\KendoUI\textures\hue.png" />
-    <Content Include="Content\KendoUI\textures\leather1.png" />
-    <Content Include="Content\KendoUI\textures\leather2.png" />
-    <Content Include="Content\KendoUI\textures\noise.png" />
-    <Content Include="Content\KendoUI\textures\stripe1.png" />
-    <Content Include="Content\KendoUI\textures\stripe2.png" />
-    <Content Include="Content\KendoUI\textures\stripe3.png" />
-    <Content Include="Content\KendoUI\textures\stripe4.png" />
-    <Content Include="Content\KendoUI\textures\stripe5.png" />
-    <Content Include="Content\KendoUI\textures\stripe6.png" />
-    <Content Include="Content\KendoUI\textures\transparency.png" />
-    <Content Include="Content\KendoUI\textures\transtexture.png" />
     <Content Include="Content\login.css" />
     <Content Include="Content\login_new.css" />
     <Content Include="Content\MaterialIcons.css" />
@@ -1069,7 +1003,7 @@
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
-    <Content Include="Content\KendoUI\Fiori\variables.scss" />
+    <Content Include="ConnectionString.config" />
     <None Include="Scripts\lib\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\lib\jquery-3.3.1.js" />
     <Content Include="Scripts\lib\jquery-3.3.1.min.js" />
@@ -1084,13 +1018,6 @@
     <Content Include="Scripts\lib\bootstrap.js" />
     <Content Include="Scripts\lib\bootstrap.min.js" />
     <Content Include="Content\images\MyIcons\license.pdf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Bold.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
-    <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans.ttf" />
-    <Content Include="Content\KendoUI\images\kendoui.ttf" />
-    <Content Include="Content\KendoUI\images\kendoui.woff" />
-    <Content Include="Content\KendoUI\kendo.material.min.css.map" />
-    <Content Include="Content\KendoUI\kendo.material.mobile.min.css.map" />
     <Content Include="fonts\fontello.eot" />
     <Content Include="fonts\fontello.ttf" />
     <Content Include="fonts\fontello.woff" />
@@ -1107,9 +1034,6 @@
     <Content Include="Content\plugins\iziToast-master\src\css\style.styl" />
     <Content Include="Content\plugins\iziToast-master\src\css\themes.styl" />
     <Content Include="Content\plugins\iziToast-master\src\css\toast.styl" />
-    <None Include="Properties\PublishProfiles\BACS.pubxml" />
-    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\FedePlinski.pubxml" />
     <Content Include="Scripts\lib\bootstrap.bundle.js.map" />
     <Content Include="Scripts\lib\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\lib\bootstrap.js.map" />
@@ -1492,12 +1416,6 @@
     <Content Include="Scripts\lib\jquery.validate.min.js" />
     <Content Include="Scripts\lib\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\lib\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\KendoUI\cultures\kendo.culture.es-AR.min.js" />
-    <Content Include="Scripts\KendoUI\cultures\kendo.culture.es.min.js" />
-    <Content Include="Scripts\KendoUI\ExportPDFCustomizing.js" />
-    <Content Include="Scripts\KendoUI\kendo.all.min.js" />
-    <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js" />
-    <Content Include="Scripts\KendoUI\messages\kendo.messages.es-ES.min.js" />
     <Content Include="Scripts\lib\bluebird.min.js" />
     <Content Include="Scripts\ConfirmacionOperaciones.js" />
     <Content Include="Scripts\CustomDateValidation.js" />
@@ -1550,18 +1468,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\FuncionRol\Index.cshtml" />
-    <Content Include="Views\Funcion\Index.cshtml" />
-    <Content Include="Views\Home\_Filtro.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\ModuloFuncion\Index.cshtml" />
-    <Content Include="Views\ModuloFuncion\_Filtro.cshtml" />
-    <Content Include="Views\Modulo\Index.cshtml" />
-    <Content Include="Views\RolUsuario\Index.cshtml" />
-    <Content Include="Views\RolUsuario\_Filtro.cshtml" />
-    <Content Include="Views\Rol\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DecimalNullable.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
@@ -1572,19 +1480,8 @@
     <Content Include="Views\Shared\Error\PermissionDenied.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Seguridad.config" />
-    <Content Include="Views\Home\_OperacionesALiquidar.cshtml" />
-    <Content Include="Views\Account\PasswordChanged.cshtml" />
-    <Content Include="Views\Movimiento\_Filtro.cshtml" />
-    <Content Include="Views\Movimiento\Index.cshtml" />
-    <Content Include="Views\Extracto\Index.cshtml" />
-    <Content Include="Views\Home\_SaldosMonetaria.cshtml" />
-    <Content Include="Views\CuentasCustodia\Index.cshtml" />
-    <Content Include="Views\EnvioLink\Index.cshtml" />
-    <Content Include="Views\EnvioLink\LinkEnviado.cshtml" />
-    <Content Include="Views\EnvioLink\LinkInvalido.cshtml" />
     <Content Include="Views\Shared\_TopNavbar.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Home\_Especies.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -1594,18 +1491,6 @@
     <Content Include="Scripts\lib\popper.js.map" />
     <Content Include="Scripts\lib\popper.min.js.map" />
     <Content Include="Scripts\lib\README.md" />
-    <Content Include="Views\Inversion\Index.cshtml" />
-    <Content Include="Views\Fondo\Suscripcion.cshtml" />
-    <Content Include="Views\Fondo\Rescate.cshtml" />
-    <Content Include="Views\Fondo\_Mensaje.cshtml" />
-    <Content Include="Views\Fondo\Confirmacion.cshtml" />
-    <Content Include="Views\Home\_Index.cshtml" />
-    <Content Include="Views\Movimiento\_Index.cshtml" />
-    <Content Include="Views\Simulador\Index.cshtml" />
-    <Content Include="Views\Movimiento\_Details.cshtml" />
-    <Content Include="Views\Consumo\_Filtro.cshtml" />
-    <Content Include="Views\Consumo\_Index.cshtml" />
-    <Content Include="Views\Consumo\Index.cshtml" />
     <Content Include="webfonts\fa-brands-400.eot" />
     <Content Include="webfonts\fa-brands-400.ttf" />
     <Content Include="webfonts\fa-brands-400.woff" />
@@ -1618,39 +1503,9 @@
     <Content Include="webfonts\fa-solid-900.ttf" />
     <Content Include="webfonts\fa-solid-900.woff" />
     <Content Include="webfonts\fa-solid-900.woff2" />
-    <Content Include="Views\Titulo\Index.cshtml" />
-    <Content Include="Views\Mercado\Index.cshtml" />
-    <Content Include="Views\Mercado\Noticias.cshtml" />
-    <Content Include="Views\Mercado\_HighCharts.cshtml" />
-    <Content Include="Views\Mercado\_TradingView.cshtml" />
-    <Content Include="Views\Mercado\_SignalRStockTicker.cshtml" />
-    <Content Include="Views\Mercado\_Amcharts.cshtml" />
-    <Content Include="Views\Mercado\_TC2000.cshtml" />
-    <Content Include="Views\Mercado\_Yahoo.cshtml" />
-    <Content Include="Views\Inversion\_Fondos.cshtml" />
-    <Content Include="Views\Inversion\_Bonos.cshtml" />
-    <Content Include="Views\Inversion\_Acciones.cshtml" />
-    <Content Include="Views\Usuario\ModificarDatos.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTimeNullable.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
-    <Content Include="Views\MayorContable\_DetalleCuentaCorriente.cshtml" />
-    <Content Include="Views\MayorContable\_DetalleCuentaCorrienteData.cshtml" />
-    <Content Include="Views\MayorContable\_DetalleCuentaCorrienteFiltros.cshtml" />
-    <Content Include="Views\MayorContable\_DetalleCuentaCorrientePrint.cshtml" />
-    <Content Include="Views\Bono\_Mensaje.cshtml" />
-    <Content Include="Views\Bono\Confirmacion.cshtml" />
-    <Content Include="Views\Bono\Vender.cshtml" />
-    <Content Include="Views\Bono\Comprar.cshtml" />
-    <Content Include="Views\Home\_Disponibilidad.cshtml" />
-    <Content Include="Views\Comprobante\_Details.cshtml" />
-    <Content Include="Views\Comprobante\_Filtro.cshtml" />
-    <Content Include="Views\Comprobante\_Index.cshtml" />
-    <Content Include="Views\Comprobante\Index.cshtml" />
-    <Content Include="Views\Movimiento\_DetailsFondo.cshtml" />
-    <Content Include="Views\Account\PreguntaSeguridadRecuperarPassword.cshtml" />
-    <Content Include="Views\Account\PreguntaSeguridadRegistro.cshtml" />
-    <Content Include="Views\Account\_Dropdown.cshtml" />
     <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\acorn" />
     <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\acorn.cmd" />
     <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\.bin\buble" />
@@ -1869,15 +1724,15 @@
     <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\whatwg-fetch\LICENSE" />
     <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\whatwg-fetch\package.json" />
     <Content Include="Scripts\plugins\tradingView\datafeeds\udf\node_modules\whatwg-fetch\README.md" />
-    <Content Include="Views\Account\CambiarPassword.cshtml" />
-    <Content Include="Views\Accion\_Mensaje.cshtml" />
-    <Content Include="Views\Accion\Comprar.cshtml" />
-    <Content Include="Views\Accion\Confirmacion.cshtml" />
-    <Content Include="Views\Accion\Vender.cshtml" />
+    <Content Include="Views\Alumno\Create.cshtml" />
+    <Content Include="Views\Alumno\Delete.cshtml" />
+    <Content Include="Views\Alumno\Edit.cshtml" />
+    <Content Include="Views\Alumno\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\PreguntasSeguridad\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
