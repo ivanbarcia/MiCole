@@ -2914,7 +2914,7 @@ Globalize.addCultureInfo( "eu", "default", {
 			},
 			months: {
 				names: ["urtarrila","otsaila","martxoa","apirila","maiatza","ekaina","uztaila","abuztua","iraila","urria","azaroa","abendua",""],
-				namesAbbr: ["urt.","ots.","mar.","api.","mai.","eka.","uzt.","abu.","ira.","urr.","aza.","abe.",""]
+				namesAbbr: ["urt.","ots.","mar.","Web.DAL.","mai.","eka.","uzt.","abu.","ira.","urr.","aza.","abe.",""]
 			},
 			AM: null,
 			PM: null,
@@ -9223,7 +9223,7 @@ Globalize.addCultureInfo( "eu-ES", "default", {
 			},
 			months: {
 				names: ["urtarrila","otsaila","martxoa","apirila","maiatza","ekaina","uztaila","abuztua","iraila","urria","azaroa","abendua",""],
-				namesAbbr: ["urt.","ots.","mar.","api.","mai.","eka.","uzt.","abu.","ira.","urr.","aza.","abe.",""]
+				namesAbbr: ["urt.","ots.","mar.","Web.DAL.","mai.","eka.","uzt.","abu.","ira.","urr.","aza.","abe.",""]
 			},
 			AM: null,
 			PM: null,

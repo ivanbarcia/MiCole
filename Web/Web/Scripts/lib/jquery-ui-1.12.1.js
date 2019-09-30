@@ -31,8 +31,8 @@ var version = $.ui.version = "1.12.1";
 
 //>>label: Widget
 //>>group: Core
-//>>description: Provides a factory for creating stateful widgets with a common API.
-//>>docs: http://api.jqueryui.com/jQuery.widget/
+//>>description: Provides a factory for creating stateful widgets with a common Web.DAL.
+//>>docs: http://Web.DAL.jqueryui.com/jQuery.widget/
 //>>demos: http://jqueryui.com/widget/
 
 
@@ -751,13 +751,13 @@ var widget = $.widget;
  * Released under the MIT license.
  * http://jquery.org/license
  *
- * http://api.jqueryui.com/position/
+ * http://Web.DAL.jqueryui.com/position/
  */
 
 //>>label: Position
 //>>group: Core
 //>>description: Positions elements relative to other elements.
-//>>docs: http://api.jqueryui.com/position/
+//>>docs: http://Web.DAL.jqueryui.com/position/
 //>>demos: http://jqueryui.com/position/
 
 
@@ -1243,7 +1243,7 @@ var position = $.ui.position;
 //>>label: :data Selector
 //>>group: Core
 //>>description: Selects elements which have data stored under the specified key.
-//>>docs: http://api.jqueryui.com/data-selector/
+//>>docs: http://Web.DAL.jqueryui.com/data-selector/
 
 
 var data = $.extend( $.expr[ ":" ], {
@@ -1272,7 +1272,7 @@ var data = $.extend( $.expr[ ":" ], {
 //>>label: disableSelection
 //>>group: Core
 //>>description: Disable selection of text content within the set of matched elements.
-//>>docs: http://api.jqueryui.com/disableSelection/
+//>>docs: http://Web.DAL.jqueryui.com/disableSelection/
 
 // This file is deprecated
 
@@ -1310,7 +1310,7 @@ var disableSelection = $.fn.extend( {
 // jscs:disable maximumLineLength
 //>>description: Extends the internal jQuery effects. Includes morphing and easing. Required by all other effects.
 // jscs:enable maximumLineLength
-//>>docs: http://api.jqueryui.com/category/effects-core/
+//>>docs: http://Web.DAL.jqueryui.com/category/effects-core/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -2933,7 +2933,7 @@ var effect = $.effects;
 //>>label: Blind Effect
 //>>group: Effects
 //>>description: Blinds the element.
-//>>docs: http://api.jqueryui.com/blind-effect/
+//>>docs: http://Web.DAL.jqueryui.com/blind-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -2989,7 +2989,7 @@ var effectsEffectBlind = $.effects.define( "blind", "hide", function( options, d
 //>>label: Bounce Effect
 //>>group: Effects
 //>>description: Bounces an element horizontally or vertically n times.
-//>>docs: http://api.jqueryui.com/bounce-effect/
+//>>docs: http://Web.DAL.jqueryui.com/bounce-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3085,7 +3085,7 @@ var effectsEffectBounce = $.effects.define( "bounce", function( options, done ) 
 //>>label: Clip Effect
 //>>group: Effects
 //>>description: Clips the element on and off like an old TV.
-//>>docs: http://api.jqueryui.com/clip-effect/
+//>>docs: http://Web.DAL.jqueryui.com/clip-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3136,7 +3136,7 @@ var effectsEffectClip = $.effects.define( "clip", "hide", function( options, don
 //>>label: Drop Effect
 //>>group: Effects
 //>>description: Moves an element in one direction and hides it at the same time.
-//>>docs: http://api.jqueryui.com/drop-effect/
+//>>docs: http://Web.DAL.jqueryui.com/drop-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3193,7 +3193,7 @@ var effectsEffectDrop = $.effects.define( "drop", "hide", function( options, don
 // jscs:disable maximumLineLength
 //>>description: Explodes an element in all directions into n pieces. Implodes an element to its original wholeness.
 // jscs:enable maximumLineLength
-//>>docs: http://api.jqueryui.com/explode-effect/
+//>>docs: http://Web.DAL.jqueryui.com/explode-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3288,7 +3288,7 @@ var effectsEffectExplode = $.effects.define( "explode", "hide", function( option
 //>>label: Fade Effect
 //>>group: Effects
 //>>description: Fades the element.
-//>>docs: http://api.jqueryui.com/fade-effect/
+//>>docs: http://Web.DAL.jqueryui.com/fade-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3321,7 +3321,7 @@ var effectsEffectFade = $.effects.define( "fade", "toggle", function( options, d
 //>>label: Fold Effect
 //>>group: Effects
 //>>description: Folds an element first horizontally and then vertically.
-//>>docs: http://api.jqueryui.com/fold-effect/
+//>>docs: http://Web.DAL.jqueryui.com/fold-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3396,7 +3396,7 @@ var effectsEffectFold = $.effects.define( "fold", "hide", function( options, don
 //>>label: Highlight Effect
 //>>group: Effects
 //>>description: Highlights the background of an element in a defined color for a custom duration.
-//>>docs: http://api.jqueryui.com/highlight-effect/
+//>>docs: http://Web.DAL.jqueryui.com/highlight-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3439,7 +3439,7 @@ var effectsEffectHighlight = $.effects.define( "highlight", "show", function( op
 //>>label: Size Effect
 //>>group: Effects
 //>>description: Resize an element to a specified width and height.
-//>>docs: http://api.jqueryui.com/size-effect/
+//>>docs: http://Web.DAL.jqueryui.com/size-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3616,7 +3616,7 @@ var effectsEffectSize = $.effects.define( "size", function( options, done ) {
 //>>label: Scale Effect
 //>>group: Effects
 //>>description: Grows or shrinks an element and its content.
-//>>docs: http://api.jqueryui.com/scale-effect/
+//>>docs: http://Web.DAL.jqueryui.com/scale-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3657,7 +3657,7 @@ var effectsEffectScale = $.effects.define( "scale", function( options, done ) {
 //>>label: Puff Effect
 //>>group: Effects
 //>>description: Creates a puff effect by scaling the element up and hiding it at the same time.
-//>>docs: http://api.jqueryui.com/puff-effect/
+//>>docs: http://Web.DAL.jqueryui.com/puff-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3684,7 +3684,7 @@ var effectsEffectPuff = $.effects.define( "puff", "hide", function( options, don
 //>>label: Pulsate Effect
 //>>group: Effects
 //>>description: Pulsates an element n times by changing the opacity to zero and back.
-//>>docs: http://api.jqueryui.com/pulsate-effect/
+//>>docs: http://Web.DAL.jqueryui.com/pulsate-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3734,7 +3734,7 @@ var effectsEffectPulsate = $.effects.define( "pulsate", "show", function( option
 //>>label: Shake Effect
 //>>group: Effects
 //>>description: Shakes an element horizontally or vertically n times.
-//>>docs: http://api.jqueryui.com/shake-effect/
+//>>docs: http://Web.DAL.jqueryui.com/shake-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3794,7 +3794,7 @@ var effectsEffectShake = $.effects.define( "shake", function( options, done ) {
 //>>label: Slide Effect
 //>>group: Effects
 //>>description: Slides an element in and out of the viewport.
-//>>docs: http://api.jqueryui.com/slide-effect/
+//>>docs: http://Web.DAL.jqueryui.com/slide-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3856,7 +3856,7 @@ var effectsEffectSlide = $.effects.define( "slide", "show", function( options, d
 //>>label: Transfer Effect
 //>>group: Effects
 //>>description: Displays a transfer effect from one element to another.
-//>>docs: http://api.jqueryui.com/transfer-effect/
+//>>docs: http://Web.DAL.jqueryui.com/transfer-effect/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -3882,7 +3882,7 @@ var effectsEffectTransfer = effect;
 //>>label: :focusable Selector
 //>>group: Core
 //>>description: Selects elements which can be focused.
-//>>docs: http://api.jqueryui.com/focusable-selector/
+//>>docs: http://Web.DAL.jqueryui.com/focusable-selector/
 
 
 
@@ -3966,7 +3966,7 @@ var form = $.fn.form = function() {
 //>>label: Form Reset Mixin
 //>>group: Core
 //>>description: Refresh input widgets when their form is reset
-//>>docs: http://api.jqueryui.com/form-reset-mixin/
+//>>docs: http://Web.DAL.jqueryui.com/form-reset-mixin/
 
 
 
@@ -4108,7 +4108,7 @@ if ( $.fn.jquery.substring( 0, 3 ) === "1.7" ) {
 //>>label: Keycode
 //>>group: Core
 //>>description: Provide keycodes as keynames
-//>>docs: http://api.jqueryui.com/jQuery.ui.keyCode/
+//>>docs: http://Web.DAL.jqueryui.com/jQuery.ui.keyCode/
 
 
 var keycode = $.ui.keyCode = {
@@ -4154,7 +4154,7 @@ var escapeSelector = $.ui.escapeSelector = ( function() {
 //>>label: labels
 //>>group: Core
 //>>description: Find all the labels associated with a given input
-//>>docs: http://api.jqueryui.com/labels/
+//>>docs: http://Web.DAL.jqueryui.com/labels/
 
 
 
@@ -4206,7 +4206,7 @@ var labels = $.fn.labels = function() {
 //>>label: scrollParent
 //>>group: Core
 //>>description: Get the closest ancestor element that is scrollable.
-//>>docs: http://api.jqueryui.com/scrollParent/
+//>>docs: http://Web.DAL.jqueryui.com/scrollParent/
 
 
 
@@ -4241,7 +4241,7 @@ var scrollParent = $.fn.scrollParent = function( includeHidden ) {
 //>>label: :tabbable Selector
 //>>group: Core
 //>>description: Selects elements which can be tabbed to.
-//>>docs: http://api.jqueryui.com/tabbable-selector/
+//>>docs: http://Web.DAL.jqueryui.com/tabbable-selector/
 
 
 
@@ -4266,7 +4266,7 @@ var tabbable = $.extend( $.expr[ ":" ], {
 //>>label: uniqueId
 //>>group: Core
 //>>description: Functions to generate and remove uniqueId's
-//>>docs: http://api.jqueryui.com/uniqueId/
+//>>docs: http://Web.DAL.jqueryui.com/uniqueId/
 
 
 
@@ -4307,7 +4307,7 @@ var uniqueId = $.fn.extend( {
 // jscs:disable maximumLineLength
 //>>description: Displays collapsible content panels for presenting information in a limited amount of space.
 // jscs:enable maximumLineLength
-//>>docs: http://api.jqueryui.com/accordion/
+//>>docs: http://Web.DAL.jqueryui.com/accordion/
 //>>demos: http://jqueryui.com/accordion/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/accordion.css
@@ -4932,7 +4932,7 @@ var safeActiveElement = $.ui.safeActiveElement = function( document ) {
 //>>label: Menu
 //>>group: Widgets
 //>>description: Creates nestable menus.
-//>>docs: http://api.jqueryui.com/menu/
+//>>docs: http://Web.DAL.jqueryui.com/menu/
 //>>demos: http://jqueryui.com/menu/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/menu.css
@@ -5587,7 +5587,7 @@ var widgetsMenu = $.widget( "ui.menu", {
 //>>label: Autocomplete
 //>>group: Widgets
 //>>description: Lists suggested words as the user is typing.
-//>>docs: http://api.jqueryui.com/autocomplete/
+//>>docs: http://Web.DAL.jqueryui.com/autocomplete/
 //>>demos: http://jqueryui.com/autocomplete/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/autocomplete.css
@@ -6207,7 +6207,7 @@ $.extend( $.ui.autocomplete, {
 } );
 
 // Live region extension, adding a `messages` option
-// NOTE: This is an experimental API. We are still investigating
+// NOTE: This is an experimental Web.DAL. We are still investigating
 // a full solution for string manipulation and internationalization.
 $.widget( "ui.autocomplete", $.ui.autocomplete, {
 	options: {
@@ -6251,7 +6251,7 @@ var widgetsAutocomplete = $.ui.autocomplete;
 //>>label: Controlgroup
 //>>group: Widgets
 //>>description: Visually groups form control widgets
-//>>docs: http://api.jqueryui.com/controlgroup/
+//>>docs: http://Web.DAL.jqueryui.com/controlgroup/
 //>>demos: http://jqueryui.com/controlgroup/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/controlgroup.css
@@ -6536,7 +6536,7 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 //>>label: Checkboxradio
 //>>group: Widgets
 //>>description: Enhances a form with multiple themeable checkboxes or radio buttons.
-//>>docs: http://api.jqueryui.com/checkboxradio/
+//>>docs: http://Web.DAL.jqueryui.com/checkboxradio/
 //>>demos: http://jqueryui.com/checkboxradio/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/button.css
@@ -6806,7 +6806,7 @@ var widgetsCheckboxradio = $.ui.checkboxradio;
 //>>label: Button
 //>>group: Widgets
 //>>description: Enhances a form with themeable buttons.
-//>>docs: http://api.jqueryui.com/button/
+//>>docs: http://Web.DAL.jqueryui.com/button/
 //>>demos: http://jqueryui.com/button/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/button.css
@@ -7174,7 +7174,7 @@ var widgetsButton = $.ui.button;
 //>>label: Datepicker
 //>>group: Widgets
 //>>description: Displays a calendar from an input or inline for selecting dates.
-//>>docs: http://api.jqueryui.com/datepicker/
+//>>docs: http://Web.DAL.jqueryui.com/datepicker/
 //>>demos: http://jqueryui.com/datepicker/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/datepicker.css
@@ -9283,7 +9283,7 @@ var ie = $.ui.ie = !!/msie [\w.]+/.exec( navigator.userAgent.toLowerCase() );
 //>>label: Mouse
 //>>group: Widgets
 //>>description: Abstracts mouse-based interactions to assist in creating certain widgets.
-//>>docs: http://api.jqueryui.com/mouse/
+//>>docs: http://Web.DAL.jqueryui.com/mouse/
 
 
 
@@ -9539,7 +9539,7 @@ var safeBlur = $.ui.safeBlur = function( element ) {
 //>>label: Draggable
 //>>group: Interactions
 //>>description: Enables dragging functionality for any element.
-//>>docs: http://api.jqueryui.com/draggable/
+//>>docs: http://Web.DAL.jqueryui.com/draggable/
 //>>demos: http://jqueryui.com/draggable/
 //>>css.structure: ../../themes/base/draggable.css
 
@@ -10769,7 +10769,7 @@ var widgetsDraggable = $.ui.draggable;
 //>>label: Resizable
 //>>group: Interactions
 //>>description: Enables resize functionality for any element.
-//>>docs: http://api.jqueryui.com/resizable/
+//>>docs: http://Web.DAL.jqueryui.com/resizable/
 //>>demos: http://jqueryui.com/resizable/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/resizable.css
@@ -11953,7 +11953,7 @@ var widgetsResizable = $.ui.resizable;
 //>>label: Dialog
 //>>group: Widgets
 //>>description: Displays customizable dialog windows.
-//>>docs: http://api.jqueryui.com/dialog/
+//>>docs: http://Web.DAL.jqueryui.com/dialog/
 //>>demos: http://jqueryui.com/dialog/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/dialog.css
@@ -12868,7 +12868,7 @@ var widgetsDialog = $.ui.dialog;
 //>>label: Droppable
 //>>group: Interactions
 //>>description: Enables drop targets for draggable elements.
-//>>docs: http://api.jqueryui.com/droppable/
+//>>docs: http://Web.DAL.jqueryui.com/droppable/
 //>>demos: http://jqueryui.com/droppable/
 
 
@@ -13351,7 +13351,7 @@ var widgetsDroppable = $.ui.droppable;
 // jscs:disable maximumLineLength
 //>>description: Displays a status indicator for loading state, standard percentage, and other progress indicators.
 // jscs:enable maximumLineLength
-//>>docs: http://api.jqueryui.com/progressbar/
+//>>docs: http://Web.DAL.jqueryui.com/progressbar/
 //>>demos: http://jqueryui.com/progressbar/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/progressbar.css
@@ -13513,7 +13513,7 @@ var widgetsProgressbar = $.widget( "ui.progressbar", {
 //>>label: Selectable
 //>>group: Interactions
 //>>description: Allows groups of elements to be selected with the mouse.
-//>>docs: http://api.jqueryui.com/selectable/
+//>>docs: http://Web.DAL.jqueryui.com/selectable/
 //>>demos: http://jqueryui.com/selectable/
 //>>css.structure: ../../themes/base/selectable.css
 
@@ -13810,7 +13810,7 @@ var widgetsSelectable = $.widget( "ui.selectable", $.ui.mouse, {
 // jscs:disable maximumLineLength
 //>>description: Duplicates and extends the functionality of a native HTML select element, allowing it to be customizable in behavior and appearance far beyond the limitations of a native select.
 // jscs:enable maximumLineLength
-//>>docs: http://api.jqueryui.com/selectmenu/
+//>>docs: http://Web.DAL.jqueryui.com/selectmenu/
 //>>demos: http://jqueryui.com/selectmenu/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/selectmenu.css, ../../themes/base/button.css
@@ -14474,7 +14474,7 @@ var widgetsSelectmenu = $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 //>>label: Slider
 //>>group: Widgets
 //>>description: Displays a flexible slider with ranges and accessibility via keyboard.
-//>>docs: http://api.jqueryui.com/slider/
+//>>docs: http://Web.DAL.jqueryui.com/slider/
 //>>demos: http://jqueryui.com/slider/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/slider.css
@@ -15210,7 +15210,7 @@ var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
 //>>label: Sortable
 //>>group: Interactions
 //>>description: Enables items in a list to be sorted using the mouse.
-//>>docs: http://api.jqueryui.com/sortable/
+//>>docs: http://Web.DAL.jqueryui.com/sortable/
 //>>demos: http://jqueryui.com/sortable/
 //>>css.structure: ../../themes/base/sortable.css
 
@@ -16746,7 +16746,7 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 //>>label: Spinner
 //>>group: Widgets
 //>>description: Displays buttons to easily input numbers via the keyboard or mouse.
-//>>docs: http://api.jqueryui.com/spinner/
+//>>docs: http://Web.DAL.jqueryui.com/spinner/
 //>>demos: http://jqueryui.com/spinner/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/spinner.css
@@ -17304,7 +17304,7 @@ var widgetsSpinner = $.ui.spinner;
 //>>label: Tabs
 //>>group: Widgets
 //>>description: Transforms a set of container elements into a tab structure.
-//>>docs: http://api.jqueryui.com/tabs/
+//>>docs: http://Web.DAL.jqueryui.com/tabs/
 //>>demos: http://jqueryui.com/tabs/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/tabs.css
@@ -18210,7 +18210,7 @@ var widgetsTabs = $.ui.tabs;
 //>>label: Tooltip
 //>>group: Widgets
 //>>description: Shows additional information for any element on hover or focus.
-//>>docs: http://api.jqueryui.com/tooltip/
+//>>docs: http://Web.DAL.jqueryui.com/tooltip/
 //>>demos: http://jqueryui.com/tooltip/
 //>>css.structure: ../../themes/base/core.css
 //>>css.structure: ../../themes/base/tooltip.css

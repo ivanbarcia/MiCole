@@ -54,10 +54,21 @@
   <ItemGroup>
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Models\Alumno.cs" />
+    <Compile Include="Models\Asignatura.cs" />
     <Compile Include="Models\AuditableEntity.cs" />
+    <Compile Include="Models\Autorizacion.cs" />
+    <Compile Include="Models\AutorizacionRetiro.cs" />
+    <Compile Include="Models\ConfiguracionHoraria.cs" />
+    <Compile Include="Models\Curso.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\LogMovimiento.cs" />
+    <Compile Include="Models\Notificacion.cs" />
+    <Compile Include="Models\Profesional.cs" />
+    <Compile Include="Models\TipoProfesional.cs" />
+    <Compile Include="Models\TipoUsuario.cs" />
+    <Compile Include="Models\Tutor.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

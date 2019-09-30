@@ -377,7 +377,7 @@ EventEmitter = (function () {
 	/**
 	 * Alias of removeEvent.
 	 *
-	 * Added to mirror the node API.
+	 * Added to mirror the node Web.DAL.
 	 */
 	proto.removeAllListeners = alias('removeEvent');
 

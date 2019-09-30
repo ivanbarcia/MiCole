@@ -19,19 +19,19 @@ namespace Web.Controllers
         {
             return RedirectToAction("Index", "Alumno");
 
-            var firstLoggingCookie = Request.Cookies["FirstLogin"];
+            //var firstLoggingCookie = Request.Cookies["FirstLogin"];
 
-            if (firstLoggingCookie != null)
-            {
-                var expiredCookie = Request.Cookies[".ADAuthCookie"];
+            //if (firstLoggingCookie != null)
+            //{
+            //    var expiredCookie = Request.Cookies[".ADAuthCookie"];
 
-                if (expiredCookie == null)
-                {
-                    ModelState.AddModelError("", Global.Error_ExpiredMessage);
-                }
-            }
+            //    if (expiredCookie == null)
+            //    {
+            //        ModelState.AddModelError("", Global.Error_ExpiredMessage);
+            //    }
+            //}
 
-            return View();
+            //return View();
         }
 
         [HttpPost]

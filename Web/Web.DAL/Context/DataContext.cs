@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using Web.DAL.Models;
 
 namespace Web.DAL.Context
 {

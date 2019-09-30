@@ -228,10 +228,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AlumnoController.cs" />
+    <Compile Include="Controllers\AsignaturaController.cs" />
+    <Compile Include="Controllers\AutorizacionController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ConfiguracionHorariaController.cs" />
+    <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NotificacionController.cs" />
+    <Compile Include="Controllers\ProfesionalController.cs" />
+    <Compile Include="Controllers\TipoProfesionalController.cs" />
+    <Compile Include="Controllers\TipoUsuarioController.cs" />
+    <Compile Include="Controllers\TutorController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Extensions\AutoMapperHelper.cs" />
     <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
@@ -1733,6 +1743,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\Asignatura\" />
+    <Folder Include="Views\Autorizacion\" />
+    <Folder Include="Views\ConfiguracionHoraria\" />
+    <Folder Include="Views\Curso\" />
+    <Folder Include="Views\Notificacion\" />
+    <Folder Include="Views\Profesional\" />
+    <Folder Include="Views\TipoProfesional\" />
+    <Folder Include="Views\TipoUsuario\" />
+    <Folder Include="Views\Tutor\" />
+    <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
