@@ -5,7 +5,7 @@ using Web.DAL.Models;
 
 namespace Web.Controllers
 {
-    public class AlumnoController : Controller
+    public class AlumnoController : BaseController
     {
         public readonly IAlumnoBusiness _alumnoBusiness;
 
